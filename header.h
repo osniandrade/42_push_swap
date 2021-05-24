@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/05/23 12:06:04 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/05/24 14:23:36 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		ft_atoi(const char *str);
 //side1.c
 void	ft_deflines(int k);
 void    ft_loadstack(t_stacks *data, char **argv);
-void    ft_printstack(t_stacks *data);
+void    ft_printstack(t_stacks *data, char *msg);
 void	ft_initstacks(t_stacks *data, int argc, int *a, int *b);
 
 //side2.c
