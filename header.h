@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/05/24 14:23:36 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/05/25 09:48:13 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #define SEPARATOR "-------------\n"
 #define BOTTOM "_\t_\n"
 #define STACKNAME "a\tb\n"
+#define TRUE 1
+#define FALSE 0
 
 typedef struct  s_stacks
 {
@@ -45,11 +47,16 @@ void	ft_initstacks(t_stacks *data, int argc, int *a, int *b);
 //side2.c
 void	ft_movealldown(t_stacks *data, int *heigth, int *stack);
 void	ft_moveallup(t_stacks *data, int *heigth, int *stack);
-void    ft_sa(t_stacks *data);
-void	ft_sb(t_stacks *data);
-void	ft_ss(t_stacks *data);
-void	ft_push_a(t_stacks *data);
-void	ft_push_b(t_stacks *data);
+void    ft_sa(t_stacks *data, int print);
+void	ft_sb(t_stacks *data, int print);
+void	ft_ss(t_stacks *data, int print);
+void	ft_pa(t_stacks *data, int print);
+void	ft_pb(t_stacks *data, int print);
+void	ft_ra(t_stacks *data, int print);
+void	ft_rb(t_stacks *data, int print);
+void	ft_rra(t_stacks *data, int print);
+void	ft_rrb(t_stacks *data, int print);
+void	ft_rrr(t_stacks *data, int print);
 
 //test.c
 void	ft_testfunc(t_stacks *data);

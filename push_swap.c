@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/05/24 14:25:54 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:12:50 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ int		main(int argc, char **argv)
 
 	data = (t_stacks) {0};
 	ft_initstacks(&data, argc, (int *)&a, (int *)&b);
-	//TEMPORARY
 	ft_printargs(argc);
 	ft_loadstack(&data, argv);
-	//TEMPORARY
 	ft_testfunc(&data);
 	return (0);
 }
