@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/05/25 11:19:03 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/05/26 14:05:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_movealldown(t_stacks *data, int *heigth, int *stack)
 {
 	int c;
 
-	if (*heigth < data->max_heigth)
+	if (*heigth <= data->max_heigth)
 	{
 		c = *heigth;
-		while (c >= 0)
+		while (c > 0)
 		{
-			stack[c + 1] = stack[c];
+			stack[c] = stack[c - 1];
 			c--;
 		}
 		stack[0] = 0;
@@ -32,15 +32,13 @@ void	ft_movealldown(t_stacks *data, int *heigth, int *stack)
 // moves every element of a stack up 1 space
 void	ft_moveallup(t_stacks *data, int *heigth, int *stack)
 {
-	int c;
-
 	if (*heigth > 0)
 	{
-		c = 0;
-		while (c < *heigth)
+		data->c = 0;
+		while (data->c < *heigth)
 		{
-			stack[c] = stack[c + 1];
-			c++;
+			stack[data->c] = stack[data->c + 1];
+			data->c++;
 		}
 		stack[*heigth] = 0;
 	}
@@ -51,9 +49,10 @@ void	ft_sa(t_stacks *data, int print)
 {
 	if (data->a_heigth > 0)
 	{
-		data->c = data->a[0];
-		data->a[0] = data->a[1];
-		data->a[1] = data->c;
+		data->c = SA[0];
+		SA[0] = SA[1];
+		SA[1] = data->c;
+		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec sa:");
 	}
@@ -64,9 +63,10 @@ void	ft_sb(t_stacks *data, int print)
 {
 	if (data->b_heigth > 0)
 	{
-		data->c = data->b[0];
-		data->b[0] = data->b[1];
-		data->b[1] = data->c;
+		data->c = SB[0];
+		SB[0] = SB[1];
+		SB[1] = data->c;
+		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec sb:");
 	}
@@ -79,6 +79,7 @@ void	ft_ss(t_stacks *data, int print)
 	{
 		ft_sa(data, FALSE);
 		ft_sb(data, FALSE);
+		data->moves--;
 		if (print)
 			ft_printstack(data, "Exec ss:");
 	}
@@ -89,11 +90,12 @@ void	ft_pa(t_stacks *data, int print)
 {
 	if (data->b_heigth > 0)
 	{
-		ft_movealldown(data, &data->a_heigth, data->a);
+		ft_movealldown(data, &data->a_heigth, SA);
 		data->a_heigth += 1;
-		data->a[0] = data->b[0];
+		SA[0] = SB[0];
 		ft_moveallup(data, &data->b_heigth, data->b);
 		data->b_heigth -= 1;
+		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec pa:");
 	}
@@ -106,9 +108,10 @@ void	ft_pb(t_stacks *data, int print)
 	{
 		ft_movealldown(data, &data->b_heigth, data->b);
 		data->b_heigth += 1;
-		data->b[0] = data->a[0];
-		ft_moveallup(data, &data->a_heigth, data->a);
+		SB[0] = SA[0];
+		ft_moveallup(data, &data->a_heigth, SA);
 		data->a_heigth -= 1;
+		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec pb:");
 	}
@@ -121,9 +124,10 @@ void	ft_ra(t_stacks *data, int print)
 
 	if (data->a_heigth > 1)
 	{
-		temp = data->a[0];
-		ft_moveallup(data, &data->a_heigth, data->a);
-		data->a[data->a_heigth - 1] = temp;
+		temp = SA[0];
+		ft_moveallup(data, &data->a_heigth, SA);
+		SA[data->a_heigth - 1] = temp;
+		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec ra:");
 	}
@@ -136,9 +140,10 @@ void	ft_rb(t_stacks *data, int print)
 
 	if (data->b_heigth > 1)
 	{
-		temp = data->b[0];
+		temp = SB[0];
 		ft_moveallup(data, &data->b_heigth, data->b);
-		data->b[data->b_heigth - 1] = temp;
+		SB[data->b_heigth - 1] = temp;
+		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec rb:");
 	}
@@ -151,6 +156,7 @@ void	ft_rr(t_stacks *data, int print)
 	{
 		ft_ra(data, FALSE);
 		ft_rb(data, FALSE);
+		data->moves--;
 		if (print)
 			ft_printstack(data, "Exec rr:");
 	}
@@ -163,9 +169,10 @@ void	ft_rra(t_stacks *data, int print)
 
 	if (data->a_heigth > 1)
 	{
-		temp = data->a[data->a_heigth - 1];
-		ft_movealldown(data, &data->a_heigth, data->a);
-		data->a[0] = temp;
+		temp = SA[data->a_heigth - 1];
+		ft_movealldown(data, &data->a_heigth, SA);
+		SA[0] = temp;
+		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec rra:");
 	}
@@ -178,9 +185,10 @@ void	ft_rrb(t_stacks *data, int print)
 
 	if (data->b_heigth > 1)
 	{
-		temp = data->b[data->b_heigth - 1];
+		temp = SB[data->b_heigth - 1];
 		ft_movealldown(data, &data->b_heigth, data->b);
-		data->b[0] = temp;
+		SB[0] = temp;
+		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec rrb:");
 	}
@@ -193,6 +201,7 @@ void	ft_rrr(t_stacks *data, int print)
 	{
 		ft_rra(data, FALSE);
 		ft_rrb(data, FALSE);
+		data->moves--;
 		if (print)
 			ft_printstack(data, "Exec rrr:");
 	}

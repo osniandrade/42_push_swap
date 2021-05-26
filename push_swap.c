@@ -6,18 +6,34 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/05/24 16:12:50 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/05/26 14:09:42 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 //TEMPORARY
-static void	ft_printargs(int argc)
+static void	ft_printargs(int moves)
 {
-	ft_putstr_fd("argc = ", 1);
-	ft_putnbr_fd(argc, 1);
+	ft_putstr_fd("moves = ", 1);
+	ft_putnbr_fd(moves, 1);
 	ft_putchar_fd('\n', 1);
+}
+
+void	ft_stacksize(t_stacks *data)
+{
+	if (data->max_heigth == 0)
+		return ;
+	else if (data->max_heigth == 1)
+		return ;
+	else if (data->max_heigth == 2)
+		ft_stack_small(data);
+	else if (data->max_heigth == 3)
+		ft_stack_mid(data);
+	else if (data->max_heigth <= 5)
+		ft_stack_big(data);
+	else if (data->max_heigth > 5)
+		ft_stack_huge(data);
 }
 
 int		main(int argc, char **argv)
@@ -28,8 +44,10 @@ int		main(int argc, char **argv)
 
 	data = (t_stacks) {0};
 	ft_initstacks(&data, argc, (int *)&a, (int *)&b);
-	ft_printargs(argc);
 	ft_loadstack(&data, argv);
-	ft_testfunc(&data);
+	//ft_testfunc(&data);
+	ft_stacksize(&data);
+	ft_printargs(data.moves);
+
 	return (0);
 }
