@@ -25,10 +25,10 @@ void	ft_deflines(int k)
 
 void	ft_loadstack(t_stacks *data, char **argv)
 {
-	data->c = 0;
-	while (data->c < data->a_heigth)
+	data->c = 1;
+	while (data->c <= data->a_heigth)
 	{
-		SA[data->c] = ft_atoi(argv[data->c + 1]);
+		SA[data->c - 1] = ft_atoi(argv[data->c]);
 		data->c++;
 	}
 	ft_printstack(data, "Init a and b:");
@@ -67,13 +67,47 @@ void	ft_printstack(t_stacks *data, char *msg)
 void	ft_initstacks(t_stacks *data, int argc, int *a, int *b)
 {
 	SA = (int *)a;
-	data->b = (int *)b;
+	SB = (int *)b;
 	data->a_heigth = argc - 1;
 	data->max_heigth = argc - 1;
-	while (data->c < data->a_heigth)
+	while (data->c <= data->a_heigth)
 	{
 		SA[data->c] = 0;
 		SB[data->c] = 0;
 		data->c++;
+	}
+}
+
+int		ft_ready(t_stacks *data)
+{
+	if (!SB[0])
+	{
+		data->c = 0;
+		while (data->c < data->a_heigth - 1)
+		{
+			if (SA[data->c] < SA[data->c + 1])
+				data->c++;
+			else
+				return (FALSE);
+		}
+		return (TRUE);
+	}
+	return (FALSE);
+}
+
+int		ft_singlemove(t_stacks *data)
+{
+	data->c = 1;
+	if (SA[0] > SA[data->a_heigth - 1])
+	{
+		while (SA[data->c] < data->a_heigth - 1)
+		{
+			if (SA[data->c] < SA[data->c + 1])
+				data->c++;
+			else
+				return (FALSE);
+		}
+		ft_ra(data, TRUE);
+		return (TRUE);
 	}
 }

@@ -46,16 +46,36 @@ void	ft_stack_big(t_stacks *data)
 	int	r;
 
 	r = 0;
+	if (ft_singlemove(data))
+		return ;
 	if (data->a_heigth == 5)
 		ft_pb(data, TRUE);
 	ft_pb(data, TRUE);
 	ft_stack_mid(data);
-	if (SB[0] > SB[1])
+	if (SB[0] > SB[1] && data->a_heigth == 5)
 		ft_sb(data, TRUE);
 	while (data->b_heigth > 0)
 	{
 		if (SB[0] < SA[0])
+		{
 			ft_pa(data, TRUE);
+			if (ft_ready(data))
+				return ;
+		}
+		if (SB[0] > SA[3] && data->a_heigth == 5)
+		{
+			ft_pa(data, TRUE);
+			ft_ra(data, TRUE);
+			if (ft_ready(data))
+				return ;
+		}
+		if (SB[0] > SA[2] && data->a_heigth == 4)
+		{
+			ft_pa(data, TRUE);
+			ft_ra(data, TRUE);
+			if (ft_ready(data))
+				return ;
+		}
 		if (SA[0] < SB[0] && SA[1] > SB[0])
 		{
 			ft_ra(data, TRUE);

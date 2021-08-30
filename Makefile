@@ -15,7 +15,9 @@ SRC = helper.c push_swap.c side1.c side2.c test.c flow1.c
 OBJ = $(SRC:.s=.o)
 FLAG = -Wall -Wextra -Werror
 DEBUG = -g -fsanitize=address
-ARGS = 2 1 3 6 5 8
+#ARGS = 2 1 3 6 5 8
+#ARGS = 43 2 9 4 5
+ARGS = 4 5 8 7
 
 all:		$(NAME)
 
