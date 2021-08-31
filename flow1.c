@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:13:38 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/06/01 15:18:02 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/08/31 22:05:22 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	ft_stack_big(t_stacks *data)
 	int	r;
 
 	r = 0;
+	if (ft_ready(data))
+		return ;
 	if (ft_singlemove(data))
 		return ;
 	if (data->a_heigth == 5)
@@ -57,25 +59,11 @@ void	ft_stack_big(t_stacks *data)
 	while (data->b_heigth > 0)
 	{
 		if (SB[0] < SA[0])
-		{
-			ft_pa(data, TRUE);
-			if (ft_ready(data))
-				return ;
-		}
+			ft_flowcase1(data);
 		if (SB[0] > SA[3] && data->a_heigth == 5)
-		{
-			ft_pa(data, TRUE);
-			ft_ra(data, TRUE);
-			if (ft_ready(data))
-				return ;
-		}
+			ft_flowcase2(data);
 		if (SB[0] > SA[2] && data->a_heigth == 4)
-		{
-			ft_pa(data, TRUE);
-			ft_ra(data, TRUE);
-			if (ft_ready(data))
-				return ;
-		}
+			ft_flowcase2(data);
 		if (SA[0] < SB[0] && SA[1] > SB[0])
 		{
 			ft_ra(data, TRUE);
@@ -85,10 +73,7 @@ void	ft_stack_big(t_stacks *data)
 		else if ((data->b_heigth == 1 && r == (data->max_heigth - 1)) ||
 				data->a_heigth == r)
 		{
-			ft_pa(data, TRUE);
-			ft_ra(data, TRUE);
-			if (data->a_heigth == data->max_heigth)
-				return ;
+			ft_flowcase2(data);
 			r++;
 		}
 		else

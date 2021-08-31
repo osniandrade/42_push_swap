@@ -100,7 +100,7 @@ int		ft_singlemove(t_stacks *data)
 	data->c = 1;
 	if (SA[0] > SA[data->a_heigth - 1])
 	{
-		while (SA[data->c] < data->a_heigth - 1)
+		while (data->c < data->a_heigth - 1)
 		{
 			if (SA[data->c] < SA[data->c + 1])
 				data->c++;
@@ -110,4 +110,5 @@ int		ft_singlemove(t_stacks *data)
 		ft_ra(data, TRUE);
 		return (TRUE);
 	}
+	return (FALSE);
 }
