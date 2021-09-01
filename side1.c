@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/05/26 14:03:18 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/01 21:47:19 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int		ft_ready(t_stacks *data)
 	return (FALSE);
 }
 
-int		ft_singlemove(t_stacks *data)
+int		ft_singlemove1(t_stacks *data)
 {
 	data->c = 1;
 	if (SA[0] > SA[data->a_heigth - 1])

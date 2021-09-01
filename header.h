@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/05/26 14:03:54 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/01 23:19:29 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_loadstack(t_stacks *data, char **argv);
 void	ft_printstack(t_stacks *data, char *msg);
 void	ft_initstacks(t_stacks *data, int argc, int *a, int *b);
 int		ft_ready(t_stacks *data);
-int		ft_singlemove(t_stacks *data);
+int		ft_singlemove1(t_stacks *data);
 
 //side2.c
 void	ft_movealldown(t_stacks *data, int *heigth, int *stack);
@@ -82,3 +82,7 @@ void	ft_stack_small(t_stacks *data);
 void	ft_stack_mid(t_stacks *data);
 void	ft_stack_big(t_stacks *data);
 void	ft_stack_huge(t_stacks *data);
+
+//cases1.c
+int		ft_flowcase1(t_stacks *data);
+void	ft_pushlowest1(t_stacks *data);
