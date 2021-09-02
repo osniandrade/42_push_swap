@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/01 21:47:19 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/01 23:45:42 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_loadstack(t_stacks *data, char **argv)
 		SA[data->c - 1] = ft_atoi(argv[data->c]);
 		data->c++;
 	}
+	ft_checknumbers(data);
 	ft_printstack(data, "Init a and b:");
 }
 
