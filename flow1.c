@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:13:38 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/01 23:19:29 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/04 16:15:31 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,16 @@ void	ft_stack_big(t_stacks *data)
 // stack size > 5
 void	ft_stack_huge(t_stacks *data)
 {
-	data->c++;
-	return ;
+	if (ft_singlemove1(data))
+		return ;
+	if (ft_singlemove2(data))
+		return ;
+	while (data->a_heigth > 0)
+	{
+		ft_pushlowest1(data);
+		if (SB[0] < SA[0] && ft_sa_in_order(data))
+			break;
+	}
+	while (data->b_heigth != 0)
+		ft_pa(data, TRUE);
 }

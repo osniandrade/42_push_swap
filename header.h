@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/01 23:46:02 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/04 15:47:33 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,9 @@ int		ft_atoi(const char *str);
 //side1.c
 void	ft_deflines(int k);
 void	ft_loadstack(t_stacks *data, char **argv);
+void	ft_printfullsack(t_stacks *data, char *msg);
 void	ft_printstack(t_stacks *data, char *msg);
 void	ft_initstacks(t_stacks *data, int argc, int *a, int *b);
-int		ft_ready(t_stacks *data);
-int		ft_singlemove1(t_stacks *data);
 
 //side2.c
 void	ft_movealldown(t_stacks *data, int *heigth, int *stack);
@@ -91,3 +90,9 @@ void	ft_pushlowest1(t_stacks *data);
 void	ft_error();
 void	ft_checkargs(int argc, char **argv);
 void	ft_checknumbers(t_stacks *data);
+int		ft_ready(t_stacks *data);
+int		ft_sa_in_order(t_stacks *data);
+
+//move1.c
+int		ft_singlemove1(t_stacks *data);
+int		ft_singlemove2(t_stacks *data);

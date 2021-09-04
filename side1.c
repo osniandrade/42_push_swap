@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/01 23:45:42 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/04 16:13:19 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,25 @@ void	ft_deflines(int k)
 
 void	ft_loadstack(t_stacks *data, char **argv)
 {
+	long int	number;
+	
 	data->c = 1;
 	while (data->c <= data->a_heigth)
 	{
-		SA[data->c - 1] = ft_atoi(argv[data->c]);
+		number = ft_atoi(argv[data->c]);
+		SA[data->c - 1] = number;
 		data->c++;
 	}
 	ft_checknumbers(data);
+	if (ft_ready(data))
+		exit(0);
 	ft_printstack(data, "Init a and b:");
 }
 
-void	ft_printstack(t_stacks *data, char *msg)
+void	ft_printfullsack(t_stacks *data, char *msg)
 {
-	int highest;
-
-	data->c = 0;
-	ft_deflines(0);
-	ft_putstr_fd(msg, 1);
+	int		highest;
+	
 	ft_putchar_fd('\n', 1);
 	if (data->a_heigth >= data->b_heigth)
 		highest = data->a_heigth;
@@ -62,6 +64,18 @@ void	ft_printstack(t_stacks *data, char *msg)
 		data->c++;
 	}
 	ft_deflines(1);
+}
+
+void	ft_printstack(t_stacks *data, char *msg)
+{
+	data->c = 0;
+	// START OF DEBUG ONLY
+	usleep(50000);
+	system("@cls||clear");
+	// END OF DEBUG ONLY
+	ft_deflines(0);
+	ft_putstr_fd(msg, 1);
+	ft_printfullsack(data, msg);
 	ft_putchar_fd('\n', 1);
 }
 
@@ -77,39 +91,4 @@ void	ft_initstacks(t_stacks *data, int argc, int *a, int *b)
 		SB[data->c] = 0;
 		data->c++;
 	}
-}
-
-int		ft_ready(t_stacks *data)
-{
-	if (!SB[0])
-	{
-		data->c = 0;
-		while (data->c < data->a_heigth - 1)
-		{
-			if (SA[data->c] < SA[data->c + 1])
-				data->c++;
-			else
-				return (FALSE);
-		}
-		return (TRUE);
-	}
-	return (FALSE);
-}
-
-int		ft_singlemove1(t_stacks *data)
-{
-	data->c = 1;
-	if (SA[0] > SA[data->a_heigth - 1])
-	{
-		while (data->c < data->a_heigth - 1)
-		{
-			if (SA[data->c] < SA[data->c + 1])
-				data->c++;
-			else
-				return (FALSE);
-		}
-		ft_ra(data, TRUE);
-		return (TRUE);
-	}
-	return (FALSE);
 }

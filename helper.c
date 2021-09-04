@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:18:45 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/05/21 15:24:09 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/02 20:16:47 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,9 @@ int		ft_isdigit(int c)
 
 int		ft_atoi(const char *str)
 {
-	int		signal;
-	int		num;
+	int			signal;
+	long int	num;
+	int			number;
 
 	signal = 1;
 	num = 0;
@@ -79,5 +80,9 @@ int		ft_atoi(const char *str)
 		return (0);
 	while (ft_isdigit(*str))
 		num = num * 10 + (*str++ - 48);
-	return (num * signal);
+	if ((num > __INT_MAX__ && signal == 1) ||
+		(num - 1 > __INT_MAX__ && signal == -1))
+			ft_error();
+	number = num;
+	return (number * signal);
 }

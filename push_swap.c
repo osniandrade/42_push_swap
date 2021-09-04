@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/01 23:35:54 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/04 12:35:38 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_stacksize(t_stacks *data)
 		ft_stack_mid(data);
 	else if (data->max_heigth <= 5)
 		ft_stack_big(data);
-	else if (data->max_heigth > 5)
+	else //if (data->max_heigth > 5)
 		ft_stack_huge(data);
 }
 

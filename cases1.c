@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/01 23:19:29 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/04 15:41:19 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 //CASES USED IN FLOW1.C
 int		ft_flowcase1(t_stacks *data)
 {
-	if (ft_ready(data))
-		return (TRUE);
 	if (ft_singlemove1(data))
+		return (TRUE);
+	if (ft_singlemove2(data))
 		return (TRUE);
 	if (data->a_heigth == 5)
 		ft_pushlowest1(data);
@@ -53,3 +53,4 @@ void	ft_pushlowest1(t_stacks *data)
 			ft_rra(data, TRUE);
 	ft_pb(data, TRUE);
 }
+
