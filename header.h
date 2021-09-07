@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/04 15:47:33 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/07 14:18:38 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #define FALSE 0
 #define SA data->a
 #define SB data->b
+#define CHUNKSIZE 20
 
 typedef	struct	s_list
 {
@@ -34,7 +35,10 @@ typedef struct	s_stacks
 	t_list		*b_list;
 	int			*a;
 	int			*b;
+	int			*list;
 	int			c;
+	int			ch;
+	int			total_ch;
 	int			a_heigth;
 	int			b_heigth;
 	int			max_heigth;
@@ -96,3 +100,7 @@ int		ft_sa_in_order(t_stacks *data);
 //move1.c
 int		ft_singlemove1(t_stacks *data);
 int		ft_singlemove2(t_stacks *data);
+
+//chunks1.c
+void	ft_chunklist(t_stacks *data);
+void	ft_chunks(t_stacks *data);

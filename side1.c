@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/04 16:13:19 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/07 13:29:46 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ void	ft_deflines(int k)
 void	ft_loadstack(t_stacks *data, char **argv)
 {
 	long int	number;
+	int			list[data->a_heigth];
 	
 	data->c = 1;
+	data->list = (int *)list;
 	while (data->c <= data->a_heigth)
 	{
 		number = ft_atoi(argv[data->c]);
 		SA[data->c - 1] = number;
+		data->list[data->c - 1] = number;
 		data->c++;
 	}
 	ft_checknumbers(data);
