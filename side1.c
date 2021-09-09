@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/07 13:29:46 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/09 23:39:49 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_printstack(t_stacks *data, char *msg)
 	data->c = 0;
 	// START OF DEBUG ONLY
 	usleep(50000);
-	system("@cls||clear");
+	//system("@cls||clear");
 	// END OF DEBUG ONLY
 	ft_deflines(0);
 	ft_putstr_fd(msg, 1);

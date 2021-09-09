@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 13:35:34 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/07 14:18:47 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/09 23:40:32 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_chunklist(t_stacks *data)
 
 void	ft_chunks(t_stacks *data)
 {
-	ft_chunklist(&data);
+	ft_chunklist(data);
 	if (data->a_heigth > CHUNKSIZE)
 	{
 		data->ch = 2;
