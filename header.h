@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/07 14:18:38 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/12 13:01:23 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,3 +104,4 @@ int		ft_singlemove2(t_stacks *data);
 //chunks1.c
 void	ft_chunklist(t_stacks *data);
 void	ft_chunks(t_stacks *data);
+void	ft_listupdate(t_stacks *data);

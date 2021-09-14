@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 13:35:34 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/09 23:40:32 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/14 00:16:56 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,26 @@
 void	ft_chunklist(t_stacks *data)
 {
 	int		temp;
+	int		pos;
+	int		swaps;
+	int		smallest;
 	
 	data->c = data->a_heigth - 1;
-	while (data->c > 0)
+	swaps = 0;
+	pos = 0;
+	smallest = SA[0];
+	while (swaps < data->a_heigth)
 	{
-		if (data->list[data->c] < data->list[data->c - 1])
+		while (pos < data->a_heigth)
 		{
-			temp = data->list[data->c];
-			data->list[data->c] = data->list[data->c - 1];
-			data->list[data->c - 1] = temp;
-			data->c = data->a_heigth;
+			if (data->list[pos] < smallest)
+			{
+				// ENCONTRAR O MENOR DA SA
+				// E TROCAR PELO EQUIVALENTE
+				// NO LIST
+			}
+			data->c--;
 		}
-		data->c--;
 	}
 }
 
@@ -40,4 +48,18 @@ void	ft_chunks(t_stacks *data)
 	}
 	else
 		data->ch = 1;
+}
+
+void	ft_listupdate(t_stacks *data)
+{
+	int		pos;
+
+	pos = 0;
+	while (data->list[pos] != SB[0])
+		pos++;
+	while (pos <= data->a_heigth - 1)
+	{
+		data->list[pos] = data->list[pos + 1];
+		pos++;
+	}
 }
