@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 13:35:34 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/14 00:16:56 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/15 21:47:38 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,33 @@
 
 void	ft_chunklist(t_stacks *data)
 {
-	int		temp;
-	int		pos;
 	int		swaps;
 	int		smallest;
+	int		temp;
 	
-	data->c = data->a_heigth - 1;
 	swaps = 0;
-	pos = 0;
-	smallest = SA[0];
+	data->c = 0;
+	smallest = 0;
+	while (data->c < data->a_heigth)
+	{
+		data->list[data->c] = SA[data->c];
+		data->c++;
+	}
 	while (swaps < data->a_heigth)
 	{
-		while (pos < data->a_heigth)
+		data->c = 0;
+		smallest = 0;
+		// lembrar de renomear e picar as funções
+		// armazenar o menor e o segundo menor a cada loop e trocar na SA pelo valor do SWAPS
+		while (data->c < data->a_heigth)
 		{
-			if (data->list[pos] < smallest)
-			{
-				// ENCONTRAR O MENOR DA SA
-				// E TROCAR PELO EQUIVALENTE
-				// NO LIST
-			}
-			data->c--;
+			if (data->list[data->c] < data->list[smallest] && data->control[data->c] == 0)
+				smallest = data->c;
+			data->c++;
 		}
+		SA[smallest] = swaps;
+		data->control[smallest] = 1;
+		swaps++;
 	}
 }
 

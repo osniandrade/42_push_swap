@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/12 13:01:23 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:45:48 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct	s_stacks
 	int			*a;
 	int			*b;
 	int			*list;
+	int			*control;
 	int			c;
 	int			ch;
 	int			total_ch;
