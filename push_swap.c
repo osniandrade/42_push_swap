@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/07 14:07:06 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/19 21:07:51 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int		main(int argc, char **argv)
 	//ft_testfunc(&data);
 	ft_stacksize(&data);
 	ft_printargs(data.moves);
-
+	ft_exit(&data);
 	return (0);
 }

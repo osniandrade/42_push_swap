@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/14 00:07:05 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:54:36 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ void	ft_loadstack(t_stacks *data, char **argv)
 	{
 		number = ft_atoi(argv[data->c]);
 		SA[data->c - 1] = number;
-		data->list[data->c - 1] = data->c - 1;
+		data->list[data->c - 1] = number;
 		data->c++;
 	}
 	ft_checknumbers(data);
 	if (ft_ready(data))
-		exit(0);
+		ft_exit(data);
 	ft_printstack(data, "Init a and b:");
 }
 
@@ -87,7 +87,7 @@ void	ft_initstacks(t_stacks *data, int argc, int *a, int *b)
 	SB = (int *)b;
 	data->a_heigth = argc - 1;
 	data->max_heigth = argc - 1;
-	while (data->c <= data->a_heigth)
+	while (data->c < data->a_heigth)
 	{
 		SA[data->c] = 0;
 		SB[data->c] = 0;

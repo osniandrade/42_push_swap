@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/04 15:41:19 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:54:13 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	ft_pushlowest1(t_stacks *data)
 	else
 		while (SA[0] != lowest)
 			ft_rra(data, TRUE);
+	if (ft_ready(data))
+		ft_exit(data);
 	ft_pb(data, TRUE);
 }
 

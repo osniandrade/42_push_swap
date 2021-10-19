@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/12 13:01:23 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/19 21:22:46 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #define FALSE 0
 #define SA data->a
 #define SB data->b
+#define LIST data->list
 #define CHUNKSIZE 20
 
 typedef	struct	s_list
@@ -105,3 +106,6 @@ int		ft_singlemove2(t_stacks *data);
 void	ft_chunklist(t_stacks *data);
 void	ft_chunks(t_stacks *data);
 void	ft_listupdate(t_stacks *data);
+
+//exit.c
+void    ft_exit(t_stacks *data);
