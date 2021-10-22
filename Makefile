@@ -6,14 +6,14 @@
 #    By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 20:22:39 by ocarlos-          #+#    #+#              #
-#    Updated: 2021/10/19 21:09:02 by ocarlos-         ###   ########.fr        #
+#    Updated: 2021/10/22 19:10:10 by ocarlos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 SRC = helper.c push_swap.c side1.c side2.c side3.c side4.c test.c flow1.c \
 	  cases1.c validate1.c move1.c chunks1.c exit.c
-OBJ = $(SRC:.s=.o)
+OBJ = $(SRC:.c=.o)
 FLAG = -Wall -Wextra -Werror
 DEBUG = -g -fsanitize=address
 #ARGS = 8 3
