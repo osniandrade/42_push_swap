@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:13:38 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/19 21:28:29 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:46:01 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,5 @@ void	ft_stack_huge(t_stacks *data)
 		return ;
 	if (ft_singlemove2(data))
 		return ;
-	ft_findmovers(data, postop, posbot);
 	
 }

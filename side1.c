@@ -6,12 +6,14 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:24:56 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:43:21 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
+// prints the separator line between moves OR
+// prints the stack name with the separador line
 void	ft_deflines(int k)
 {
 	if (k == 0)
@@ -23,6 +25,7 @@ void	ft_deflines(int k)
 	}
 }
 
+// loads input args into SA and into the secondary list
 void	ft_loadstack(t_stacks *data, char **argv)
 {
 	long int	number;
@@ -43,6 +46,7 @@ void	ft_loadstack(t_stacks *data, char **argv)
 	ft_printstack(data, "Init a and b:");
 }
 
+// prints SA and SB on terminal
 void	ft_printfullsack(t_stacks *data, char *msg)
 {
 	int		highest;
@@ -71,6 +75,7 @@ void	ft_printfullsack(t_stacks *data, char *msg)
 	ft_deflines(1);
 }
 
+// prints SA, SB, stack names and separation lines on terminal
 void	ft_printstack(t_stacks *data, char *msg)
 {
 	int	i;
@@ -86,6 +91,7 @@ void	ft_printstack(t_stacks *data, char *msg)
 	ft_putchar_fd('\n', 1);
 }
 
+// initializes the main struct
 void	ft_initstacks(t_stacks *data, int argc, int *a, int *b)
 {
 	int	i;

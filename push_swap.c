@@ -6,13 +6,13 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:32:31 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:39:31 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-//TEMPORARY
+// TEMPORARY - prints the number of moves used
 static void	ft_printargs(int moves)
 {
 	ft_putstr_fd("moves = ", 1);
@@ -20,6 +20,7 @@ static void	ft_printargs(int moves)
 	ft_putchar_fd('\n', 1);
 }
 
+// checks the stack size and which algorithm will be used to sort it
 void	ft_stacksize(t_stacks *data)
 {
 	if (data->max_heigth == 0)

@@ -6,18 +6,20 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 23:28:19 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:27:33 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:45:12 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
+// prints an error message on the terminal
 void	ft_error()
 {
-	printf("Error\n");
+	ft_putstr_fd("Error\n", 1);
 	exit(0);
 }
 
+// checks if input arguments are present and valid
 void	ft_checkargs(int argc, char **argv)
 {
 	int		c;
@@ -34,6 +36,7 @@ void	ft_checkargs(int argc, char **argv)
 		exit(0);
 }
 
+// checks if numbers are valid integers
 void	ft_checknumbers(t_stacks *data)
 {
 	int		pivot;
@@ -56,6 +59,7 @@ void	ft_checknumbers(t_stacks *data)
 	}
 }
 
+// checks if SA is already sorted
 int		ft_ready(t_stacks *data)
 {
 	int	i;

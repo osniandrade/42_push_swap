@@ -6,12 +6,13 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:18:45 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/02 20:16:47 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:36:30 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
+// tests if character is a blank space
 static int		ft_tstspc(const char ch)
 {
 	if ((ch == ' ') || (ch == '\f') || (ch == '\n') ||
@@ -20,6 +21,7 @@ static int		ft_tstspc(const char ch)
 	return (0);
 }
 
+// prints 1 character
 void	ft_putchar_fd(char c, int fd)
 {
 	unsigned char	ch;
@@ -28,6 +30,7 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &ch, 1);
 }
 
+// prints a string
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (s)
@@ -35,6 +38,7 @@ void	ft_putstr_fd(char *s, int fd)
 			ft_putchar_fd(*s++, fd);
 }
 
+// prints a number
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int num;
@@ -55,6 +59,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 
+// checks if character is a digit
 int		ft_isdigit(int c)
 {
 	if ((c >= 48) && (c <= 57))
@@ -63,6 +68,7 @@ int		ft_isdigit(int c)
 		return (0);
 }
 
+// converts a string to integer
 int		ft_atoi(const char *str)
 {
 	int			signal;

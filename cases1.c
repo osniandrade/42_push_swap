@@ -6,13 +6,13 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:30:21 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:34:31 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-//CASES USED IN FLOW1.C
+// sorts 4 to 5 numbers in SA
 int		ft_flowcase1(t_stacks *data)
 {
 	if (ft_singlemove1(data))
