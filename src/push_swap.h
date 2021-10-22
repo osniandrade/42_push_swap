@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 20:51:48 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/19 20:53:49 by ocarlos-         ###   ########.fr       */
+/*   Created: 2021/10/21 22:27:28 by ocarlos-          #+#    #+#             */
+/*   Updated: 2021/10/21 23:32:35 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# include "../libft/libft.h"
+# include <stdio.h>
 
-void    ft_exit(t_stacks *data)
+typedef	struct	s_node
 {
-    free(data->list);
-    exit(0);
-}
+	int				value;
+	struct s_node	*next;	
+}				t_node;
+
+//main.c
+
+
+#endif

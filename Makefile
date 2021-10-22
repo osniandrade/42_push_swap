@@ -6,47 +6,36 @@
 #    By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 20:22:39 by ocarlos-          #+#    #+#              #
-#    Updated: 2021/10/19 21:09:02 by ocarlos-         ###   ########.fr        #
+#    Updated: 2021/10/21 23:12:06 by ocarlos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SRC = helper.c push_swap.c side1.c side2.c side3.c side4.c test.c flow1.c \
-	  cases1.c validate1.c move1.c chunks1.c exit.c
-OBJ = $(SRC:.s=.o)
+SRC_FILES = main.c
+SRC = $(addprefix ./src/, $(SRC_FILES))
+OBJ = $(SRC:.c=.o)
 FLAG = -Wall -Wextra -Werror
 DEBUG = -g -fsanitize=address
-#ARGS = 8 3
-#ARGS = 2 1 0
-#ARGS = 1 2 -3 4 -1
-#ARGS = 1 5 2 4 3
-#ARGS = 5 -2 6 -8 7
-#ARGS = 3 5 9 7 -4
-#ARGS = 5 -9 7 1 2
-#ARGS = 6 3 8 -7 4
-#ARGS = 2 5 -8 9 6
-#ARGS = 3 -5 9 -7 1
-#ARGS = 3 1 -6 -8 -5
-ARGS = 3 2 -6 9 8 12
-#ARGS = 17 7 11 8
-#ARGS = 8 11 17 7
-#ARGS = 1 2 3 4 5 6 -17 66 8 -50
-#ARGS = 343 651 -607 996 987 514 -750 718 -592 284 98 -539 974 806 -420 -710 205 -982 228 116 602 -483 832 -872 -400 441 80 220 -48 -173 970 164 -928 -682 -160 -35 -230 -946 293 767 -790 -665 -626 402 435 240 -421 -590 -262 619 -169 168 -299 53 588 803 -800 -685 -944 285 852 324 -696 -258 494 -503 366 -134 -707 175 37 -19 192 977 -93 -660 842 -874 -459 -484 294 -559 -310 -68 -320 -368 -130 -599 529 716 104 -133 -295 -567 -212 599 891 420 392 -629
-#ARGS = 192 977 -93 -660 842 -874 -459 -484 294 -559 -310 -68 -320 -368 -130 -599 529 716 104 -133 -295 -567 -212 599 891 420 392 -629
+LIBFT = -L ./libft -lft
+ARGS = 8 11
 
 all:		$(NAME)
 
-$(NAME):	$(OBJ)
-			@gcc $(FLAG) $(SRC) -o push_swap
+$(NAME):	$(OBJ) c_libft
+			@gcc $(FLAG) $(DEBUG) $(SRC) $(LIBFT) -o push_swap
 
-test:
-			@gcc $(DEBUG) $(SRC) -o push_swap
+test:		all
 			@./push_swap $(ARGS)
 
+c_libft:
+			make bonus -C ./libft
+
 clean:
+			make clean -C ./libft
 			@/bin/rm -f $(OBJ)
 
 fclean:		clean
+			make fclean -C ./libft
 			@/bin/rm -f $(NAME)
 
 re:			fclean all
