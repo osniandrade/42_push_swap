@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:13:38 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:46:01 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 20:35:45 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ void	ft_stack_big(t_stacks *data)
 // stack size > 5
 void	ft_stack_huge(t_stacks *data)
 {
-	int	postop;
-	int	posbot;
-	
 	if (ft_singlemove1(data))
 		return ;
 	if (ft_singlemove2(data))
 		return ;
-	
+	while (data->a_heigth != 1)
+		ft_pushlowest(data);
+	while (data->b_heigth != 0)
+		ft_pa(data, TRUE);
 }
