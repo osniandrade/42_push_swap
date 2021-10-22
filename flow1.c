@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:13:38 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 20:35:45 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 21:04:23 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,50 @@ void	ft_stack_big(t_stacks *data)
 // stack size > 5
 void	ft_stack_huge(t_stacks *data)
 {
+	t_lowest	up;
+	t_lowest	down;
+	int			i;
+	int			c;
+
 	if (ft_singlemove1(data))
 		return ;
 	if (ft_singlemove2(data))
 		return ;
-	while (data->a_heigth != 1)
-		ft_pushlowest(data);
+	
 	while (data->b_heigth != 0)
 		ft_pa(data, TRUE);
+}
+
+// finds the smallest 2 values from top and bottom
+t_lowest	ft_twosmall(t_stacks *data)
+{
+	int	i;
+	int	c;
+	t_lowest	nt;
+	t_lowest	nb;
+
+	while (data->a_heigth != 1)
+	{
+		i = 0;
+		c = 0;
+		while (i < data->a_heigth)
+		{
+			if (SA[i] == LIST[c] || SA[i] == LIST[c + 1])
+			{
+				nt.lowest = SA[i];
+				nt.position = i;
+			}
+			i++;
+		}
+		while (i != 0)
+		{
+			if (SA[i] == LIST[c] || SA[i] == LIST[c + 1])
+			{
+				nb.lowest = SA[i];
+				nb.position = i;
+			}
+			i--;
+		}
+		//if (nt)
+	}
 }
