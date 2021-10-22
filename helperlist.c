@@ -6,13 +6,13 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 13:35:34 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/19 21:31:32 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:32:20 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_chunklist(t_stacks *data)
+void	ft_helperlist(t_stacks *data)
 {
 	int		c;
 	int		temp;
@@ -29,31 +29,5 @@ void	ft_chunklist(t_stacks *data)
 		}
 		else
 			c++;
-	}
-}
-
-void	ft_chunks(t_stacks *data)
-{
-	ft_chunklist(data);
-	// if (data->a_heigth > CHUNKSIZE)
-	// {
-	// 	data->ch = 2;
-	// 	data->total_ch = (data->a_heigth / CHUNKSIZE) + 1;
-	// }
-	// else
-	// 	data->ch = 1;
-}
-
-void	ft_listupdate(t_stacks *data)
-{
-	int		pos;
-
-	pos = 0;
-	while (data->list[pos] != SB[0])
-		pos++;
-	while (pos <= data->a_heigth - 1)
-	{
-		data->list[pos] = data->list[pos + 1];
-		pos++;
 	}
 }

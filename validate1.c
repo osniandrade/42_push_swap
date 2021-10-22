@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 23:28:19 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/04 15:35:38 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:27:33 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,20 @@ void	ft_checkargs(int argc, char **argv)
 void	ft_checknumbers(t_stacks *data)
 {
 	int		pivot;
+	int		i;
 
 	pivot = 0;
-	data->c = 1;
+	i = 1;
 	while (pivot < data->a_heigth)
 	{
-		data->c = pivot + 1;
-		while (data->c < data->a_heigth)
+		i = pivot + 1;
+		while (i < data->a_heigth)
 		{
-			if ((SA[pivot] == SA[data->c]) || 
+			if ((SA[pivot] == SA[i]) || 
 					(SA[pivot] > __INT_MAX__) ||
-					(SA[data->c] > __INT_MAX__))
+					(SA[i] > __INT_MAX__))
 				ft_error();
-			data->c++;
+			i++;
 		}
 		pivot++;
 	}
@@ -57,32 +58,15 @@ void	ft_checknumbers(t_stacks *data)
 
 int		ft_ready(t_stacks *data)
 {
+	int	i;
+
 	if (!SB[0])
 	{
-		data->c = 0;
-		while (data->c < data->a_heigth - 1)
+		i = 0;
+		while (i < data->a_heigth - 1)
 		{
-			if (SA[data->c] < SA[data->c + 1])
-				data->c++;
-			else
-				return (FALSE);
-		}
-		return (TRUE);
-	}
-	return (FALSE);
-}
-
-int		ft_sa_in_order(t_stacks *data)
-{
-	data->c = 0;
-	if (data->a_heigth == 1)
-		return (TRUE);
-	if (data->a_heigth > 1)
-	{
-		while (data->c < data->a_heigth - 1)
-		{
-			if (SA[data->c] < SA[data->c + 1])
-				data->c++;
+			if (SA[i] < SA[i + 1])
+				i++;
 			else
 				return (FALSE);
 		}

@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/19 21:32:36 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:24:56 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ void	ft_deflines(int k)
 void	ft_loadstack(t_stacks *data, char **argv)
 {
 	long int	number;
+	int			i;
 	
-	data->c = 1;
+	i = 1;
 	data->list = (int *) calloc (data->a_heigth, sizeof(int));
-	data->control = (int *) calloc (data->a_heigth, sizeof(int));
-	while (data->c <= data->a_heigth)
+	while (i <= data->a_heigth)
 	{
-		number = ft_atoi(argv[data->c]);
-		SA[data->c - 1] = number;
-		data->list[data->c - 1] = number;
-		data->c++;
+		number = ft_atoi(argv[i]);
+		SA[i - 1] = number;
+		data->list[i - 1] = number;
+		i++;
 	}
 	ft_checknumbers(data);
 	if (ft_ready(data))
@@ -46,32 +46,36 @@ void	ft_loadstack(t_stacks *data, char **argv)
 void	ft_printfullsack(t_stacks *data, char *msg)
 {
 	int		highest;
+	int		i;
 	
+	i = 0;
 	ft_putchar_fd('\n', 1);
 	if (data->a_heigth >= data->b_heigth)
 		highest = data->a_heigth;
 	else
 		highest = data->b_heigth;
-	while (data->c < highest)
+	while (i < highest)
 	{
-		if (data->c < data->a_heigth)
-			ft_putnbr_fd(SA[data->c], 1);
+		if (i < data->a_heigth)
+			ft_putnbr_fd(SA[i], 1);
 		else
 			ft_putchar_fd(' ', 1);
 		ft_putchar_fd('\t', 1);
-		if (data->c < data->b_heigth)
-			ft_putnbr_fd(SB[data->c], 1);
+		if (i < data->b_heigth)
+			ft_putnbr_fd(SB[i], 1);
 		else
 			ft_putchar_fd(' ', 1);
 		ft_putchar_fd('\n', 1);
-		data->c++;
+		i++;
 	}
 	ft_deflines(1);
 }
 
 void	ft_printstack(t_stacks *data, char *msg)
 {
-	data->c = 0;
+	int	i;
+
+	i = 0;
 	// START OF DEBUG ONLY
 	usleep(50000);
 	//system("@cls||clear");
@@ -84,14 +88,17 @@ void	ft_printstack(t_stacks *data, char *msg)
 
 void	ft_initstacks(t_stacks *data, int argc, int *a, int *b)
 {
+	int	i;
+	
+	i = 0;
 	SA = (int *)a;
 	SB = (int *)b;
 	data->a_heigth = argc - 1;
 	data->max_heigth = argc - 1;
-	while (data->c < data->a_heigth)
+	while (i < data->a_heigth)
 	{
-		SA[data->c] = 0;
-		SB[data->c] = 0;
-		data->c++;
+		SA[i] = 0;
+		SB[i] = 0;
+		i++;
 	}
 }

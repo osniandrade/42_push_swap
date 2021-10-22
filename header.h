@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/19 21:31:48 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:33:00 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,11 @@
 #define LIST data->list
 #define CHUNKSIZE 20
 
-typedef	struct	s_list
-{
-	void			*content;
-	struct 	s_list	*next;
-}				t_list;
 typedef struct	s_stacks
 {
-	t_list		*a_list;
-	t_list		*b_list;
 	int			*a;
 	int			*b;
 	int			*list;
-	int			*control;
-	int			c;
-	int			ch;
-	int			total_ch;
 	int			a_heigth;
 	int			b_heigth;
 	int			max_heigth;
@@ -79,9 +68,6 @@ void	ft_rra(t_stacks *data, int print);
 void	ft_rrb(t_stacks *data, int print);
 void	ft_rrr(t_stacks *data, int print);
 
-//test.c
-void	ft_testfunc(t_stacks *data);
-
 //flow1.c
 void	ft_stack_small(t_stacks *data);
 void	ft_stack_mid(t_stacks *data);
@@ -97,16 +83,13 @@ void	ft_error();
 void	ft_checkargs(int argc, char **argv);
 void	ft_checknumbers(t_stacks *data);
 int		ft_ready(t_stacks *data);
-int		ft_sa_in_order(t_stacks *data);
 
 //move1.c
 int		ft_singlemove1(t_stacks *data);
 int		ft_singlemove2(t_stacks *data);
 
-//chunks1.c
-void	ft_chunklist(t_stacks *data);
-void	ft_chunks(t_stacks *data);
-void	ft_listupdate(t_stacks *data);
+//helperlist.c
+void	ft_helperlist(t_stacks *data);
 
 //exit.c
 void    ft_exit(t_stacks *data);

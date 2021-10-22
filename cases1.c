@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/19 20:54:13 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:30:21 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,25 @@ int		ft_flowcase1(t_stacks *data)
 	return (FALSE);
 }
 
+// finds the lowest number in SA, rolls the stack as 
+// little as possible and pushes it to SB
 void	ft_pushlowest1(t_stacks *data)
 {
 	int position;
 	int lowest;
+	int	i;
 
 	lowest = SA[0];
-	data->c = 0;
+	i = 0;
 	position = 0;
-	while (data->c < data->a_heigth)
+	while (i < data->a_heigth)
 	{
-		if (SA[data->c] < lowest)
+		if (SA[i] < lowest)
 		{
-			lowest = SA[data->c];
-			position = data->c;
+			lowest = SA[i];
+			position = i;
 		}
-		data->c++;
+		i++;
 	}
 	if (position < data->a_heigth / 2)
 		while (SA[0] != lowest)
