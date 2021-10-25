@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 20:48:19 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/25 21:46:40 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,15 @@ void		ft_movealldown(t_stacks *data, int *heigth, int *stack);
 void		ft_moveallup(t_stacks *data, int *heigth, int *stack);
 void		ft_sa(t_stacks *data, int print);
 void		ft_sb(t_stacks *data, int print);
+
+//side3.c
 void		ft_ss(t_stacks *data, int print);
 void		ft_pa(t_stacks *data, int print);
 void		ft_pb(t_stacks *data, int print);
 void		ft_ra(t_stacks *data, int print);
 void		ft_rb(t_stacks *data, int print);
+
+//side4.c
 void		ft_rr(t_stacks *data, int print);
 void		ft_rra(t_stacks *data, int print);
 void		ft_rrb(t_stacks *data, int print);

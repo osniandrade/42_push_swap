@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 13:35:34 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:36:50 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/25 22:44:05 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,31 @@
 // loads SA in a secondary list and sorts it
 void	ft_helperlist(t_stacks *data)
 {
-	int		c;
-	int		temp;
+	int	lowest;
+	int	last;
+	int	i;  // iterations
+	int	p;  // position of lowest
+	int	c;  // count of numbers normalized
 
 	c = 0;
-	while (c < data->a_heigth - 1)
+	last = __INT_MAX__ * -1;
+	while (c < data->a_heigth)
 	{
-		if (data->list[c] > data->list[c + 1])
+		i = 0;
+		p = 0;
+		lowest = __INT_MAX__;
+		while (i < data->a_heigth)
 		{
-			temp = data->list[c];
-			data->list[c] = data->list[c + 1];
-			data->list[c + 1] = temp;
-			c = 0;
+			if (SA[i] < lowest && SA[i] > last )
+			{
+				lowest = SA[i];
+				p = i;
+			}
+			i++;
 		}
-		else
-			c++;
+		LIST[p] = c + 1;
+		last = lowest;
+		c++;
 	}
+	//TODO: move all numbers from LIST to SA and sort LIST
 }
