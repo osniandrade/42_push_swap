@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 13:35:34 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 20:26:22 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/27 22:42:41 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_normalize(t_stacks *data)
 }
 
 // swaps numbers between SA to LIST
-void	ft_movelist(t_stacks *data)
+void	ft_sortlist(t_stacks *data)
 {
 	int	i;
 	int	temp;
@@ -61,7 +61,7 @@ void	ft_movelist(t_stacks *data)
 }
 
 // sorts numbers in LIST
-void	ft_sortlist(t_stacks *data)
+void	ft_movelist(t_stacks *data)
 {
 	int	c;
 	int	temp;
@@ -80,6 +80,6 @@ void	ft_sortlist(t_stacks *data)
 void	ft_helperlist(t_stacks *data)
 {
 	ft_normalize(data);
-	ft_sortlist(data);
 	ft_movelist(data);
+	ft_sortlist(data);
 }

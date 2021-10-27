@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 22:14:46 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/27 22:55:30 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,21 @@
 # define STACKNAME "a\tb\n"
 # define TRUE 1
 # define FALSE 0
-# define SA data->a
-# define SB data->b
+# define SA data->la.o
+# define SB data->lb.o
 # define LIST data->list
 # define CHUNKSIZE 20
 
+typedef	struct	s_list
+{
+	int			*o; // original number
+	int			*n; // normalized number
+}				t_list;
+
 typedef struct	s_stacks
 {
-	int			*a;
-	int			*b;
+	t_list		la;
+	t_list		lb;
 	int			*list;
 	int			a_heigth;
 	int			b_heigth;
@@ -107,8 +113,8 @@ int			ft_singlemove2(t_stacks *data);
 
 //helperlist.c
 void		ft_normalize(t_stacks *data);
-void		ft_movelist(t_stacks *data);
 void		ft_sortlist(t_stacks *data);
+void		ft_movelist(t_stacks *data);
 void		ft_helperlist(t_stacks *data);
 
 //exit.c
