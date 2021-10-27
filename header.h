@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 20:23:03 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/27 22:14:46 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void		ft_stack_huge(t_stacks *data);
 int			ft_flowcase1(t_stacks *data);
 t_lowest	ft_findlowest(t_stacks *data);
 void		ft_pushlowest(t_stacks *data);
+void		ft_sorthuge(t_stacks *data);
 
 //validate1.c
 void		ft_error();

@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 20:13:54 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/27 22:25:20 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,33 @@ void		ft_pushlowest(t_stacks *data)
 	ft_pb(data, TRUE);
 }
 
+// sort more than 5 numbers using RADIX algorithm and bitwise
+void		ft_sorthuge(t_stacks *data)
+{
+	int	size = data->a_heigth;
+	int	max_num = size - 1;
+	int	max_bits = 0;
+	int i = 0;
+	int j = 0;
+	int	num = 0;
+
+	while ((max_num >> max_bits) != 0)
+		++max_bits;
+	while (i < max_bits)
+	{
+		while (j < size)
+		{
+			num = SA[0];
+			if ((num >> i)&1 == 1)
+				ft_ra(data, TRUE);
+			else
+				ft_pb(data, TRUE);
+			j++;
+		}
+		while (data->b_heigth != 0)
+		ft_pa(data, TRUE);
+		j = 0;
+		i++;
+	}
+	
+}
