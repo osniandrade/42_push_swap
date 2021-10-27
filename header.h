@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/25 21:46:40 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/27 20:23:03 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ typedef struct	s_stacks
 typedef	struct	s_lowest
 {
 	int			lowest;
-	int			position;
+	int			last;
+	int			i;
+	int			p;
+	int			c;
 }				t_lowest;
 
 //main.c
@@ -102,6 +105,9 @@ int			ft_singlemove1(t_stacks *data);
 int			ft_singlemove2(t_stacks *data);
 
 //helperlist.c
+void		ft_normalize(t_stacks *data);
+void		ft_movelist(t_stacks *data);
+void		ft_sortlist(t_stacks *data);
 void		ft_helperlist(t_stacks *data);
 
 //exit.c

@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 20:48:19 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/27 20:13:54 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_lowest	ft_findlowest(t_stacks *data)
 		if (SA[i] < l.lowest)
 		{
 			l.lowest = SA[i];
-			l.position = i;
+			l.p = i;
 		}
 		i++;
 	}
@@ -54,7 +54,7 @@ void		ft_pushlowest(t_stacks *data)
 	t_lowest	l;
 
 	l = ft_findlowest(data);
-	if (l.position < data->a_heigth / 2)
+	if (l.p < data->a_heigth / 2)
 		while (SA[0] != l.lowest)
 			ft_ra(data, TRUE);
 	else

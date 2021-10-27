@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:39:31 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/27 20:04:01 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int		main(int argc, char **argv)
 	ft_checkargs(argc, argv);
 	ft_initstacks(&data, argc, (int *)&a, (int *)&b);
 	ft_loadstack(&data, argv);
-	ft_helperlist(&data);
 	ft_stacksize(&data);
 	ft_printargs(data.moves);
 	ft_exit(&data);
