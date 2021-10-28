@@ -49,7 +49,7 @@ void	ft_rrb(t_stacks *data, int print)
 	if (data->b_heigth > 1)
 	{
 		temp = SB[data->b_heigth - 1];
-		ft_movealldown(data, &data->b_heigth, data->b);
+		ft_movealldown(data, &data->b_heigth, SB);
 		SB[0] = temp;
 		data->moves++;
 		if (print)

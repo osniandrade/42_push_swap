@@ -33,7 +33,7 @@ void	ft_pa(t_stacks *data, int print)
 		ft_movealldown(data, &data->a_heigth, SA);
 		data->a_heigth += 1;
 		SA[0] = SB[0];
-		ft_moveallup(data, &data->b_heigth, data->b);
+		ft_moveallup(data, &data->b_heigth, SB);
 		data->b_heigth -= 1;
 		data->moves++;
 		if (print)
@@ -46,7 +46,7 @@ void	ft_pb(t_stacks *data, int print)
 {
 	if (data->a_heigth > 0)
 	{
-		ft_movealldown(data, &data->b_heigth, data->b);
+		ft_movealldown(data, &data->b_heigth, SB);
 		data->b_heigth += 1;
 		SB[0] = SA[0];
 		ft_moveallup(data, &data->a_heigth, SA);
@@ -81,7 +81,7 @@ void	ft_rb(t_stacks *data, int print)
 	if (data->b_heigth > 1)
 	{
 		temp = SB[0];
-		ft_moveallup(data, &data->b_heigth, data->b);
+		ft_moveallup(data, &data->b_heigth, SB);
 		SB[data->b_heigth - 1] = temp;
 		data->moves++;
 		if (print)
