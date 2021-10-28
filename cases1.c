@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 22:37:56 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 22:02:44 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int			ft_flowcase1(t_stacks *data)
 		ft_pushlowest(data);
 	ft_pushlowest(data);
 	ft_stack_mid(data);
-	if (SB[0] > SB[1] && data->a_heigth == 5)
+	if (SB[0].o > SB[1].o && data->a_heigth == 5)
 		ft_sb(data, TRUE);
 	return (FALSE);
 }
@@ -35,13 +35,12 @@ t_lowest	ft_findlowest(t_stacks *data)
 	t_lowest	l;
 
 	i = 0;
-	l.lowest = SA[0];
+	l.lowest = SA[0].o;
 	while (i < data->a_heigth)
 	{
-		if (SA[i] < l.lowest)
+		if (SA[i].o < l.lowest)
 		{
-			l.lowest = SA[i];
-			l.p = i;
+			l.lowest = SA[i].o;
 		}
 		i++;
 	}
@@ -55,10 +54,10 @@ void		ft_pushlowest(t_stacks *data)
 
 	l = ft_findlowest(data);
 	if (l.p < data->a_heigth / 2)
-		while (SA[0] != l.lowest)
+		while (SA[0].o != l.lowest)
 			ft_ra(data, TRUE);
 	else
-		while (SA[0] != l.lowest)
+		while (SA[0].o != l.lowest)
 			ft_rra(data, TRUE);
 	if (ft_ready(data))
 		ft_exit(data);
@@ -81,7 +80,7 @@ void		ft_sorthuge(t_stacks *data)
 	{
 		while (n.p < data->max_heigth)
 		{
-			if ((SA[0] >> n.i)&1 == 1)
+			if ((SA[0].n >> n.i)&1 == 1)
 				ft_ra(data, TRUE);
 			else
 				ft_pb(data, TRUE);

@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 22:55:53 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:39:02 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,10 @@ void	ft_loadstack(t_stacks *data, char **argv)
 	int			i;
 	
 	i = 1;
-	data->list = (int *) calloc (data->a_heigth, sizeof(int));
 	while (i <= data->a_heigth)
 	{
 		number = ft_atoi(argv[i]);
-		SA[i - 1] = number;
-		data->list[i - 1] = number;
+		SA[i - 1].o = number;
 		i++;
 	}
 	ft_checknumbers(data);
@@ -61,12 +59,12 @@ void	ft_printfullsack(t_stacks *data, char *msg)
 	while (i < highest)
 	{
 		if (i < data->a_heigth)
-			ft_putnbr_fd(SA[i], 1);
+			ft_putnbr_fd(SA[i].o, 1);
 		else
 			ft_putchar_fd(' ', 1);
 		ft_putchar_fd('\t', 1);
 		if (i < data->b_heigth)
-			ft_putnbr_fd(SB[i], 1);
+			ft_putnbr_fd(SB[i].o, 1);
 		else
 			ft_putchar_fd(' ', 1);
 		ft_putchar_fd('\n', 1);
@@ -92,19 +90,17 @@ void	ft_printstack(t_stacks *data, char *msg)
 }
 
 // initializes the main struct
-void	ft_initstacks(t_stacks *data, int argc, int *a, int *b)
+void	ft_initstacks(t_stacks *data, int argc)
 {
 	int	i;
 	
 	i = 0;
-	SA = (int *)a;
-	SB = (int *)b;
 	data->a_heigth = argc - 1;
 	data->max_heigth = argc - 1;
 	while (i < data->a_heigth)
 	{
-		SA[i] = 0;
-		SB[i] = 0;
+		data->la[i] = (t_list){0};
+		data->lb[i] = (t_list){0};
 		i++;
 	}
 }

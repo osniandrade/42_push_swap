@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 23:28:19 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:45:12 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:38:34 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ void	ft_checknumbers(t_stacks *data)
 		i = pivot + 1;
 		while (i < data->a_heigth)
 		{
-			if ((SA[pivot] == SA[i]) || 
-					(SA[pivot] > __INT_MAX__) ||
-					(SA[i] > __INT_MAX__))
+			if ((SA[pivot].o == SA[i].o) || 
+					(SA[pivot].o > __INT_MAX__) ||
+					(SA[i].o > __INT_MAX__))
 				ft_error();
 			i++;
 		}
@@ -64,12 +64,12 @@ int		ft_ready(t_stacks *data)
 {
 	int	i;
 
-	if (!SB[0])
+	if (!SB[0].o)
 	{
 		i = 0;
 		while (i < data->a_heigth - 1)
 		{
-			if (SA[i] < SA[i + 1])
+			if (SA[i].o < SA[i + 1].o)
 				i++;
 			else
 				return (FALSE);

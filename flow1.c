@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:13:38 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 22:44:22 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 22:02:29 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 // stack size = 2
 void	ft_stack_small(t_stacks *data)
 {
-	if (SA[0] > SA[1])
+	if (SA[0].o > SA[1].o)
 		ft_sa(data, TRUE);
 }
 
 // stack size = 3
 void	ft_stack_mid(t_stacks *data)
 {
-	if (SA[1] < SA[0] && SA[0] < SA[2])
+	if (SA[1].o < SA[0].o && SA[0].o < SA[2].o)
 		ft_sa(data, TRUE);
-	else if (SA[2] < SA[1] && SA[1] < SA[0])
+	else if (SA[2].o < SA[1].o && SA[1].o < SA[0].o)
 	{
 		ft_sa(data, TRUE);
 		ft_rra(data, TRUE);
 	}
-	else if (SA[1] < SA[2] && SA[2] < SA[0])
+	else if (SA[1].o < SA[2].o && SA[2].o < SA[0].o)
 		ft_ra(data, TRUE);
-	else if (SA[0] < SA[2] && SA[2] < SA[1])
+	else if (SA[0].o < SA[2].o && SA[2].o < SA[1].o)
 	{
 		ft_sa(data, TRUE);
 		ft_ra(data, TRUE);
 	}
-	else if (SA[2] < SA[1] && SA[0] < SA[1])
+	else if (SA[2].o < SA[1].o && SA[0].o < SA[1].o)
 		ft_rra(data, TRUE);
 }
 
@@ -64,6 +64,5 @@ void	ft_stack_huge(t_stacks *data)
 	if (ft_singlemove2(data))
 		return ;
 	ft_sorthuge(data);
-	ft_movelist(data);
 	ft_printstack(data, "finish");
 }

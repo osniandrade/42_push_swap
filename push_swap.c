@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 20:04:01 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:23:29 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@ void	ft_stacksize(t_stacks *data)
 int		main(int argc, char **argv)
 {
 	t_stacks data;
-	int	a[argc];
-	int	b[argc];
+	t_list	a[argc];
+	t_list	b[argc];
 
 	data = (t_stacks) {0};
 	ft_checkargs(argc, argv);
-	ft_initstacks(&data, argc, (int *)&a, (int *)&b);
+	data.la = (t_list *)&a;
+	data.lb = (t_list *)&b;
+	ft_initstacks(&data, argc);
 	ft_loadstack(&data, argv);
 	ft_stacksize(&data);
 	ft_printargs(data.moves);

@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 12:32:32 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:38:28 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:50:40 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int		ft_singlemove1(t_stacks *data)
 	int	i;
 
 	i = 1;
-	if (SA[0] > SA[data->a_heigth - 1])
+	if (SA[0].o > SA[data->a_heigth - 1].o)
 	{
 		while (i < data->a_heigth - 1)
 		{
-			if (SA[i] < SA[i + 1])
+			if (SA[i].o < SA[i + 1].o)
 				i++;
 			else
 				return (FALSE);
@@ -39,11 +39,11 @@ int		ft_singlemove2(t_stacks *data)
 	int	i;
 
 	i = 1;
-	if (SA[0] > SA[data->a_heigth - 1])
+	if (SA[0].o > SA[data->a_heigth - 1].o)
 	{
 		while (i < data->a_heigth - 1)
 		{
-			if (SA[i] < SA[i + 1])
+			if (SA[i].o < SA[i + 1].o)
 				i++;
 			else
 				return (FALSE);

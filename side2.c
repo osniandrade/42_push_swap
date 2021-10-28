@@ -6,14 +6,14 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:22:21 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:55:02 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 // moves every element of a stack down 1 space
-void	ft_movealldown(t_stacks *data, int *heigth, int *stack)
+void	ft_movealldown(t_stacks *data, int *heigth, t_list *stack)
 {
 	int c;
 
@@ -25,12 +25,12 @@ void	ft_movealldown(t_stacks *data, int *heigth, int *stack)
 			stack[c] = stack[c - 1];
 			c--;
 		}
-		stack[0] = 0;
+		stack[0] = (t_list){0};
 	}
 }
 
 // moves every element of a stack up 1 space
-void	ft_moveallup(t_stacks *data, int *heigth, int *stack)
+void	ft_moveallup(t_stacks *data, int *heigth, t_list *stack)
 {
 	int	i;
 
@@ -42,14 +42,14 @@ void	ft_moveallup(t_stacks *data, int *heigth, int *stack)
 			stack[i] = stack[i + 1];
 			i++;
 		}
-		stack[*heigth] = 0;
+		stack[*heigth] = (t_list){0};
 	}
 }
 
 // swaps the first 2 elements of stack a
 void	ft_sa(t_stacks *data, int print)
 {
-	int	i;
+	t_list	i;
 
 	if (data->a_heigth > 0)
 	{
@@ -65,7 +65,7 @@ void	ft_sa(t_stacks *data, int print)
 // swaps the first 2 elements of stack b
 void	ft_sb(t_stacks *data, int print)
 {
-	int	i;
+	t_list	i;
 
 	if (data->b_heigth > 0)
 	{

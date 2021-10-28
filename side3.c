@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/09/07 13:33:33 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:56:01 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_pb(t_stacks *data, int print)
 // shifts up all elements of A by 1. the first element becomes the last one
 void	ft_ra(t_stacks *data, int print)
 {
-	int		temp;
+	t_list	temp;
 
 	if (data->a_heigth > 1)
 	{
@@ -76,7 +76,7 @@ void	ft_ra(t_stacks *data, int print)
 // shifts up all elements of B by 1. the first element becomes the last one
 void	ft_rb(t_stacks *data, int print)
 {
-	int		temp;
+	t_list	temp;
 
 	if (data->b_heigth > 1)
 	{

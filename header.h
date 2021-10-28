@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/27 22:55:30 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:55:17 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,21 @@
 # define STACKNAME "a\tb\n"
 # define TRUE 1
 # define FALSE 0
-# define SA data->la.o
-# define SB data->lb.o
+# define SA data->la
+# define SB data->lb
 # define LIST data->list
 # define CHUNKSIZE 20
 
 typedef	struct	s_list
 {
-	int			*o; // original number
-	int			*n; // normalized number
+	int			o; // original number
+	int			n; // normalized number
 }				t_list;
 
 typedef struct	s_stacks
 {
-	t_list		la;
-	t_list		lb;
+	t_list		*la;
+	t_list		*lb;
 	int			*list;
 	int			a_heigth;
 	int			b_heigth;
@@ -68,11 +68,11 @@ void		ft_deflines(int k);
 void		ft_loadstack(t_stacks *data, char **argv);
 void		ft_printfullsack(t_stacks *data, char *msg);
 void		ft_printstack(t_stacks *data, char *msg);
-void		ft_initstacks(t_stacks *data, int argc, int *a, int *b);
+void		ft_initstacks(t_stacks *data, int argc);
 
 //side2.c
-void		ft_movealldown(t_stacks *data, int *heigth, int *stack);
-void		ft_moveallup(t_stacks *data, int *heigth, int *stack);
+void		ft_movealldown(t_stacks *data, int *heigth, t_list *stack);
+void		ft_moveallup(t_stacks *data, int *heigth, t_list *stack);
 void		ft_sa(t_stacks *data, int print);
 void		ft_sb(t_stacks *data, int print);
 
@@ -113,8 +113,6 @@ int			ft_singlemove2(t_stacks *data);
 
 //helperlist.c
 void		ft_normalize(t_stacks *data);
-void		ft_sortlist(t_stacks *data);
-void		ft_movelist(t_stacks *data);
 void		ft_helperlist(t_stacks *data);
 
 //exit.c
