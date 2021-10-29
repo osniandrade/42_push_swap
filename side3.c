@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 13:47:36 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 18:26:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_ss(t_stks *data, int print)
 		ft_sb(data, FALSE);
 		data->moves--;
 		if (print)
-			ft_printstack(data, "Exec ss:");
+			ft_printoprt("ss");
 	}
 }
 
@@ -33,11 +33,11 @@ void	ft_pa(t_stks *data, int print)
 		ft_movealldown(data, &data->a_heigth, data->la);
 		data->a_heigth += 1;
 		data->la[0] = data->lb[0];
-		ft_moveallup(data, &data->b_heigth, data->lb);
+		ft_moveallup(&data->b_heigth, data->lb);
 		data->b_heigth -= 1;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec pa:");
+			ft_printoprt("pa");
 	}
 }
 
@@ -49,11 +49,11 @@ void	ft_pb(t_stks *data, int print)
 		ft_movealldown(data, &data->b_heigth, data->lb);
 		data->b_heigth += 1;
 		data->lb[0] = data->la[0];
-		ft_moveallup(data, &data->a_heigth, data->la);
+		ft_moveallup(&data->a_heigth, data->la);
 		data->a_heigth -= 1;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec pb:");
+			ft_printoprt("pb");
 	}
 }
 
@@ -65,11 +65,11 @@ void	ft_ra(t_stks *data, int print)
 	if (data->a_heigth > 1)
 	{
 		temp = data->la[0];
-		ft_moveallup(data, &data->a_heigth, data->la);
+		ft_moveallup(&data->a_heigth, data->la);
 		data->la[data->a_heigth - 1] = temp;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec ra:");
+			ft_printoprt("ra");
 	}
 }
 
@@ -81,10 +81,10 @@ void	ft_rb(t_stks *data, int print)
 	if (data->b_heigth > 1)
 	{
 		temp = data->lb[0];
-		ft_moveallup(data, &data->b_heigth, data->lb);
+		ft_moveallup(&data->b_heigth, data->lb);
 		data->lb[data->b_heigth - 1] = temp;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec rb:");
+			ft_printoprt("rb");
 	}
 }

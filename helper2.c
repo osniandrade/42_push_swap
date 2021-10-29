@@ -6,14 +6,14 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:18:45 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 14:33:48 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 18:10:12 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 // tests if character is a blank space
-static int	ft_tstspc(const char ch)
+int	ft_tstspc(const char ch)
 {
 	if ((ch == ' ') || (ch == '\f') || (ch == '\n')
 		|| (ch == '\r') || (ch == '\t') || (ch == '\v'))

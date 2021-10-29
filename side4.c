@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 13:47:36 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 18:26:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_rr(t_stks *data, int print)
 		ft_rb(data, FALSE);
 		data->moves--;
 		if (print)
-			ft_printstack(data, "Exec rr:");
+			ft_printoprt("rr");
 	}
 }
 
@@ -37,7 +37,7 @@ void	ft_rra(t_stks *data, int print)
 		data->la[0] = temp;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec rra:");
+			ft_printoprt("rra");
 	}
 }
 
@@ -53,7 +53,7 @@ void	ft_rrb(t_stks *data, int print)
 		data->lb[0] = temp;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec rrb:");
+			ft_printoprt("rrb");
 	}
 }
 
@@ -66,6 +66,6 @@ void	ft_rrr(t_stks *data, int print)
 		ft_rrb(data, FALSE);
 		data->moves--;
 		if (print)
-			ft_printstack(data, "Exec rrr:");
+			ft_printoprt("rrr");
 	}
 }

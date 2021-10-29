@@ -80,7 +80,7 @@ void	ft_sorthuge(t_stks *data)
 	{
 		while (n.p < data->max_heigth)
 		{
-			if ((data->la[0].n >> n.i) & 1 == 1)
+			if (((data->la[0].n >> n.i) & 1) == 1)
 				ft_ra(data, TRUE);
 			else
 				ft_pb(data, TRUE);

@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 13:47:36 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 18:26:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_movealldown(t_stks *data, int *heigth, t_list *stack)
 }
 
 // moves every element of a stack up 1 space
-void	ft_moveallup(t_stks *data, int *heigth, t_list *stack)
+void	ft_moveallup(int *heigth, t_list *stack)
 {
 	int	i;
 
@@ -58,7 +58,7 @@ void	ft_sa(t_stks *data, int print)
 		data->la[1] = i;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec data->la:");
+			ft_printoprt("sa");
 	}
 }
 
@@ -74,6 +74,6 @@ void	ft_sb(t_stks *data, int print)
 		data->lb[1] = i;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec data->lb:");
+			ft_printoprt("sb");
 	}
 }

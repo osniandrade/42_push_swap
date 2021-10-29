@@ -6,19 +6,11 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 14:25:00 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 18:09:04 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-// TEMPORARY - prints the number of moves used
-static void	ft_printargs(int moves)
-{
-	ft_putstr_fd("moves = ", 1);
-	ft_putnbr_fd(moves, 1);
-	ft_putchar_fd('\n', 1);
-}
 
 // exits the code and frees memory allocations
 void	ft_exit(t_stks *data)
@@ -60,7 +52,6 @@ int	main(int argc, char **argv)
 	ft_initstacks(&data, argc);
 	ft_loadstack(&data, argv);
 	ft_stacksize(&data);
-	ft_printargs(data.moves);
 	ft_exit(&data);
 	return (0);
 }

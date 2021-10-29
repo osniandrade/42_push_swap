@@ -43,9 +43,6 @@ void	ft_stack_mid(t_stks *data)
 // stack size = 4 or 5
 void	ft_stack_big(t_stks *data)
 {
-	int	r;
-
-	r = 0;
 	if (ft_flowcase1(data))
 		return ;
 	if (data->a_heigth == 3)
@@ -64,5 +61,4 @@ void	ft_stack_huge(t_stks *data)
 	if (ft_singlemove2(data))
 		return ;
 	ft_sorthuge(data);
-	ft_printstack(data, "finish");
 }
