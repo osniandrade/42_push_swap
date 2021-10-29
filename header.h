@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 14:40:34 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 17:22:41 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_stks
 
 typedef struct s_var
 {
-	int			lowest;
+	int			max;
 	int			last;
 	int			i;
 	int			p;
@@ -113,6 +113,5 @@ int			ft_singlemove2(t_stks *data);
 
 //helperlist.c
 void		ft_normalize(t_stks *data);
-void		ft_helperlist(t_stks *data);
 
 #endif

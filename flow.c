@@ -58,7 +58,7 @@ void	ft_stack_huge(t_stks *data)
 {
 	if (ft_ready(data))
 		ft_exit(data);
-	ft_helperlist(data);
+	ft_normalize(data);
 	if (ft_singlemove1(data))
 		return ;
 	if (ft_singlemove2(data))

@@ -35,12 +35,12 @@ t_var	ft_findlowest(t_stks *data)
 	t_var	l;
 
 	i = 0;
-	l.lowest = data->la[0].o;
+	l.max = data->la[0].o;
 	while (i < data->a_heigth)
 	{
-		if (data->la[i].o < l.lowest)
+		if (data->la[i].o < l.max)
 		{
-			l.lowest = data->la[i].o;
+			l.max = data->la[i].o;
 		}
 		i++;
 	}
@@ -54,10 +54,10 @@ void	ft_pushlowest(t_stks *data)
 
 	l = ft_findlowest(data);
 	if (l.p < data->a_heigth / 2)
-		while (data->la[0].o != l.lowest)
+		while (data->la[0].o != l.max)
 			ft_ra(data, TRUE);
 	else
-		while (data->la[0].o != l.lowest)
+		while (data->la[0].o != l.max)
 			ft_rra(data, TRUE);
 	if (ft_ready(data))
 		ft_exit(data);

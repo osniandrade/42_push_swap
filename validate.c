@@ -46,19 +46,25 @@ void	ft_checkargs(int argc, char **argv)
 // checks if numbers are valid integers
 void	ft_checknumbers(t_stks *data)
 {
-	int		pivot;
-	int		i;
+	int			pivot;
+	int			i;
+	long int	max;
+	long int	min;
 
 	pivot = 0;
 	i = 1;
+	max = __INT_MAX__;
+	min = (__INT_MAX__ * -1) + 1;
 	while (pivot < data->a_heigth)
 	{
 		i = pivot + 1;
 		while (i < data->a_heigth)
 		{
 			if ((data->la[pivot].o == data->la[i].o)
-				|| (data->la[pivot].o > __INT_MAX__)
-				|| (data->la[i].o > __INT_MAX__))
+				|| (data->la[pivot].o > max)
+				|| (data->la[i].o > max)
+				|| (data->la[pivot].o < min)
+				|| (data->la[i].o < min))
 				ft_error(data, 0);
 			i++;
 		}
