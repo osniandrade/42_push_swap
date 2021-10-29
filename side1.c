@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:53:24 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_loadstack(t_stacks *data, char **argv)
 {
 	long int	number;
 	int			i;
-	
+
 	i = 1;
 	while (i <= data->a_heigth)
 	{
@@ -40,7 +40,7 @@ void	ft_loadstack(t_stacks *data, char **argv)
 	}
 	ft_checknumbers(data);
 	if (ft_ready(data))
-		ft_exit(data);
+		exit(0);
 	ft_printstack(data, "Init a and b:");
 }
 
@@ -49,7 +49,7 @@ void	ft_printfullsack(t_stacks *data, char *msg)
 {
 	int		highest;
 	int		i;
-	
+
 	i = 0;
 	ft_putchar_fd('\n', 1);
 	if (data->a_heigth >= data->b_heigth)
@@ -93,7 +93,7 @@ void	ft_printstack(t_stacks *data, char *msg)
 void	ft_initstacks(t_stacks *data, int argc)
 {
 	int	i;
-	
+
 	i = 0;
 	data->a_heigth = argc - 1;
 	data->max_heigth = argc - 1;

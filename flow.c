@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flow1.c                                            :+:      :+:    :+:   */
+/*   flow.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:13:38 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:39:44 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:53:24 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_stack_big(t_stacks *data)
 void	ft_stack_huge(t_stacks *data)
 {
 	if (ft_ready(data))
-		ft_exit(data);
+		exit(0);
 	ft_helperlist(data);
 	if (ft_singlemove1(data))
 		return ;

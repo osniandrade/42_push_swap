@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cases1.c                                           :+:      :+:    :+:   */
+/*   cases.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:53:24 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		ft_pushlowest(t_stacks *data)
 		while (data->la[0].o != l.lowest)
 			ft_rra(data, TRUE);
 	if (ft_ready(data))
-		ft_exit(data);
+		exit(0);
 	ft_pb(data, TRUE);
 }
 

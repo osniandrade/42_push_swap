@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:52:09 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // moves every element of a stack down 1 space
 void	ft_movealldown(t_stacks *data, int *heigth, t_list *stack)
 {
-	int c;
+	int	c;
 
 	if (*heigth <= data->max_heigth)
 	{
@@ -77,4 +77,3 @@ void	ft_sb(t_stacks *data, int print)
 			ft_printstack(data, "Exec data->lb:");
 	}
 }
-

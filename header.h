@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:42:32 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 13:43:50 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,33 +86,30 @@ void		ft_rra(t_stacks *data, int print);
 void		ft_rrb(t_stacks *data, int print);
 void		ft_rrr(t_stacks *data, int print);
 
-//flow1.c
+//flow.c
 void		ft_stack_small(t_stacks *data);
 void		ft_stack_mid(t_stacks *data);
 void		ft_stack_big(t_stacks *data);
 void		ft_stack_huge(t_stacks *data);
 
-//cases1.c
+//cases.c
 int			ft_flowcase1(t_stacks *data);
 t_lowest	ft_findlowest(t_stacks *data);
 void		ft_pushlowest(t_stacks *data);
 void		ft_sorthuge(t_stacks *data);
 
-//validate1.c
+//validate.c
 void		ft_error(void);
 void		ft_checkargs(int argc, char **argv);
 void		ft_checknumbers(t_stacks *data);
 int			ft_ready(t_stacks *data);
 
-//move1.c
+//move.c
 int			ft_singlemove1(t_stacks *data);
 int			ft_singlemove2(t_stacks *data);
 
 //helperlist.c
 void		ft_normalize(t_stacks *data);
 void		ft_helperlist(t_stacks *data);
-
-//exit.c
-void		ft_exit(t_stacks *data);
 
 #endif
