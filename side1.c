@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:53:24 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 14:40:04 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_deflines(int k)
 }
 
 // loads input args into data->la and into the secondary list
-void	ft_loadstack(t_stacks *data, char **argv)
+void	ft_loadstack(t_stks *data, char **argv)
 {
 	long int	number;
 	int			i;
@@ -34,18 +34,18 @@ void	ft_loadstack(t_stacks *data, char **argv)
 	i = 1;
 	while (i <= data->a_heigth)
 	{
-		number = ft_atoi(argv[i]);
+		number = ft_atoi(argv[i], data);
 		data->la[i - 1].o = number;
 		i++;
 	}
 	ft_checknumbers(data);
 	if (ft_ready(data))
-		exit(0);
+		ft_exit(data);
 	ft_printstack(data, "Init a and b:");
 }
 
 // prints data->la and data->lb on terminal
-void	ft_printfullsack(t_stacks *data, char *msg)
+void	ft_printfullsack(t_stks *data, char *msg)
 {
 	int		highest;
 	int		i;
@@ -74,15 +74,11 @@ void	ft_printfullsack(t_stacks *data, char *msg)
 }
 
 // prints data->la, data->lb, stack names and separation lines on terminal
-void	ft_printstack(t_stacks *data, char *msg)
+void	ft_printstack(t_stks *data, char *msg)
 {
 	int	i;
 
 	i = 0;
-	// START OF DEBUG ONLY
-	usleep(20000);
-	//system("@cls||clear");
-	// END OF DEBUG ONLY
 	ft_deflines(0);
 	ft_putstr_fd(msg, 1);
 	ft_printfullsack(data, msg);
@@ -90,7 +86,7 @@ void	ft_printstack(t_stacks *data, char *msg)
 }
 
 // initializes the main struct
-void	ft_initstacks(t_stacks *data, int argc)
+void	ft_initstacks(t_stks *data, int argc)
 {
 	int	i;
 

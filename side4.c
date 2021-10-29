@@ -6,14 +6,14 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 13:47:36 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 // ra and rb at the same time
-void	ft_rr(t_stacks *data, int print)
+void	ft_rr(t_stks *data, int print)
 {
 	if (data->b_heigth > 1 && data->a_heigth > 1)
 	{
@@ -26,7 +26,7 @@ void	ft_rr(t_stacks *data, int print)
 }
 
 // shifts down all elements of A by 1. the last element becomes the first one
-void	ft_rra(t_stacks *data, int print)
+void	ft_rra(t_stks *data, int print)
 {
 	t_list	temp;
 
@@ -42,7 +42,7 @@ void	ft_rra(t_stacks *data, int print)
 }
 
 // shifts down all elements of B by 1. the last element becomes the first one
-void	ft_rrb(t_stacks *data, int print)
+void	ft_rrb(t_stks *data, int print)
 {
 	t_list	temp;
 
@@ -58,7 +58,7 @@ void	ft_rrb(t_stacks *data, int print)
 }
 
 // rra and rrb at the same time
-void	ft_rrr(t_stacks *data, int print)
+void	ft_rrr(t_stks *data, int print)
 {
 	if (data->a_heigth > 1 && data->b_heigth > 1)
 	{

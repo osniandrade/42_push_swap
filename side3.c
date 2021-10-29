@@ -6,14 +6,14 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 13:47:36 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 // swaps the first 2 elements of both stacks
-void	ft_ss(t_stacks *data, int print)
+void	ft_ss(t_stks *data, int print)
 {
 	if (data->a_heigth > 0 && data->b_heigth > 0)
 	{
@@ -26,7 +26,7 @@ void	ft_ss(t_stacks *data, int print)
 }
 
 // pushes the first elements of stack b to stack a
-void	ft_pa(t_stacks *data, int print)
+void	ft_pa(t_stks *data, int print)
 {
 	if (data->b_heigth > 0)
 	{
@@ -42,7 +42,7 @@ void	ft_pa(t_stacks *data, int print)
 }
 
 // pushes the first elements of stack a to stack b
-void	ft_pb(t_stacks *data, int print)
+void	ft_pb(t_stks *data, int print)
 {
 	if (data->a_heigth > 0)
 	{
@@ -58,7 +58,7 @@ void	ft_pb(t_stacks *data, int print)
 }
 
 // shifts up all elements of A by 1. the first element becomes the last one
-void	ft_ra(t_stacks *data, int print)
+void	ft_ra(t_stks *data, int print)
 {
 	t_list	temp;
 
@@ -74,7 +74,7 @@ void	ft_ra(t_stacks *data, int print)
 }
 
 // shifts up all elements of B by 1. the first element becomes the last one
-void	ft_rb(t_stacks *data, int print)
+void	ft_rb(t_stks *data, int print)
 {
 	t_list	temp;
 

@@ -13,7 +13,7 @@
 #include "header.h"
 
 // sorts 4 to 5 numbers in data->la
-int			ft_flowcase1(t_stacks *data)
+int	ft_flowcase1(t_stks *data)
 {
 	if (ft_singlemove1(data))
 		return (TRUE);
@@ -29,10 +29,10 @@ int			ft_flowcase1(t_stacks *data)
 }
 
 // finds the lowest number in data->la
-t_lowest	ft_findlowest(t_stacks *data)
+t_var	ft_findlowest(t_stks *data)
 {
-	int			i;
-	t_lowest	l;
+	int		i;
+	t_var	l;
 
 	i = 0;
 	l.lowest = data->la[0].o;
@@ -48,9 +48,9 @@ t_lowest	ft_findlowest(t_stacks *data)
 }
 
 // rolls data->la as little as possible and pushes its lowest value to data->lb
-void		ft_pushlowest(t_stacks *data)
+void	ft_pushlowest(t_stks *data)
 {
-	t_lowest	l;
+	t_var	l;
 
 	l = ft_findlowest(data);
 	if (l.p < data->a_heigth / 2)
@@ -60,18 +60,18 @@ void		ft_pushlowest(t_stacks *data)
 		while (data->la[0].o != l.lowest)
 			ft_rra(data, TRUE);
 	if (ft_ready(data))
-		exit(0);
+		ft_exit(data);
 	ft_pb(data, TRUE);
 }
 
 // sort more than 5 numbers using RADIX algorithm and bitwise
-void		ft_sorthuge(t_stacks *data)
+void	ft_sorthuge(t_stks *data)
 {
-	int	h_num;
-	int	m_bit;
-	t_lowest n;
+	int		h_num;
+	int		m_bit;
+	t_var	n;
 
-	n = (t_lowest){0};
+	n = (t_var){0};
 	h_num = data->a_heigth - 1;
 	m_bit = 0;
 	while ((h_num >> m_bit) != 0)
@@ -80,7 +80,7 @@ void		ft_sorthuge(t_stacks *data)
 	{
 		while (n.p < data->max_heigth)
 		{
-			if ((data->la[0].n >> n.i)&1 == 1)
+			if ((data->la[0].n >> n.i) & 1 == 1)
 				ft_ra(data, TRUE);
 			else
 				ft_pb(data, TRUE);

@@ -13,9 +13,11 @@
 #include "header.h"
 
 // prints an error message on the terminal
-void	ft_error()
+void	ft_error(t_stks *data, int clean)
 {
 	ft_putstr_fd("Error\n", 1);
+	if (clean)
+		ft_exit(data);
 	exit(0);
 }
 
@@ -28,8 +30,13 @@ void	ft_checkargs(int argc, char **argv)
 	while (c < argc)
 	{
 		if (!(ft_isdigit(*argv[c])))
+		{
 			if (*argv[c] != '-')
-				ft_error();
+			{
+				ft_putstr_fd("Error\n", 1);
+				exit(0);
+			}
+		}
 		c++;
 	}
 	if (argc == 2)
@@ -37,7 +44,7 @@ void	ft_checkargs(int argc, char **argv)
 }
 
 // checks if numbers are valid integers
-void	ft_checknumbers(t_stacks *data)
+void	ft_checknumbers(t_stks *data)
 {
 	int		pivot;
 	int		i;
@@ -49,10 +56,10 @@ void	ft_checknumbers(t_stacks *data)
 		i = pivot + 1;
 		while (i < data->a_heigth)
 		{
-			if ((data->la[pivot].o == data->la[i].o) || 
-					(data->la[pivot].o > __INT_MAX__) ||
-					(data->la[i].o > __INT_MAX__))
-				ft_error();
+			if ((data->la[pivot].o == data->la[i].o)
+				|| (data->la[pivot].o > __INT_MAX__)
+				|| (data->la[i].o > __INT_MAX__))
+				ft_error(data, 0);
 			i++;
 		}
 		pivot++;
@@ -60,7 +67,7 @@ void	ft_checknumbers(t_stacks *data)
 }
 
 // checks if data->la is already sorted
-int		ft_ready(t_stacks *data)
+int	ft_ready(t_stks *data)
 {
 	int	i;
 

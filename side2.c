@@ -6,14 +6,14 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:52:09 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 13:47:36 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 // moves every element of a stack down 1 space
-void	ft_movealldown(t_stacks *data, int *heigth, t_list *stack)
+void	ft_movealldown(t_stks *data, int *heigth, t_list *stack)
 {
 	int	c;
 
@@ -30,7 +30,7 @@ void	ft_movealldown(t_stacks *data, int *heigth, t_list *stack)
 }
 
 // moves every element of a stack up 1 space
-void	ft_moveallup(t_stacks *data, int *heigth, t_list *stack)
+void	ft_moveallup(t_stks *data, int *heigth, t_list *stack)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ void	ft_moveallup(t_stacks *data, int *heigth, t_list *stack)
 }
 
 // swaps the first 2 elements of stack a
-void	ft_sa(t_stacks *data, int print)
+void	ft_sa(t_stks *data, int print)
 {
 	t_list	i;
 
@@ -63,7 +63,7 @@ void	ft_sa(t_stacks *data, int print)
 }
 
 // swaps the first 2 elements of stack b
-void	ft_sb(t_stacks *data, int print)
+void	ft_sb(t_stks *data, int print)
 {
 	t_list	i;
 

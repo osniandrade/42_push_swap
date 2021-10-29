@@ -1,66 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helper.c                                           :+:      :+:    :+:   */
+/*   helper2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:18:45 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:36:30 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 14:33:48 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 // tests if character is a blank space
-static int		ft_tstspc(const char ch)
+static int	ft_tstspc(const char ch)
 {
-	if ((ch == ' ') || (ch == '\f') || (ch == '\n') ||
-		(ch == '\r') || (ch == '\t') || (ch == '\v'))
+	if ((ch == ' ') || (ch == '\f') || (ch == '\n')
+		|| (ch == '\r') || (ch == '\t') || (ch == '\v'))
 		return (1);
 	return (0);
 }
 
-// prints 1 character
-void	ft_putchar_fd(char c, int fd)
-{
-	unsigned char	ch;
-
-	ch = (unsigned char)c;
-	write(fd, &ch, 1);
-}
-
-// prints a string
-void	ft_putstr_fd(char *s, int fd)
-{
-	if (s)
-		while (*s != '\0')
-			ft_putchar_fd(*s++, fd);
-}
-
-// prints a number
-void	ft_putnbr_fd(int n, int fd)
-{
-	unsigned int num;
-
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		num = n * -1;
-	}
-	else
-		num = n;
-	if (num < 10)
-		ft_putchar_fd(num + '0', fd);
-	if ((num / 10) > 0)
-	{
-		ft_putnbr_fd(num / 10, fd);
-		ft_putchar_fd(num % 10 + '0', fd);
-	}
-}
-
 // checks if character is a digit
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if ((c >= 48) && (c <= 57))
 		return (1);
@@ -69,7 +31,7 @@ int		ft_isdigit(int c)
 }
 
 // converts a string to integer
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str, t_stks *data)
 {
 	int			signal;
 	long int	num;
@@ -86,9 +48,9 @@ int		ft_atoi(const char *str)
 		return (0);
 	while (ft_isdigit(*str))
 		num = num * 10 + (*str++ - 48);
-	if ((num > __INT_MAX__ && signal == 1) ||
-		(num - 1 > __INT_MAX__ && signal == -1))
-			ft_error();
+	if ((num > __INT_MAX__ && signal == 1)
+		|| (num - 1 > __INT_MAX__ && signal == -1))
+		ft_error(data, 1);
 	number = num;
 	return (number * signal);
 }

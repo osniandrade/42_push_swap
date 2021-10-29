@@ -13,7 +13,7 @@
 #include "header.h"
 
 // checks if its possible to sort data->la with a single move (ra)
-int		ft_singlemove1(t_stacks *data)
+int	ft_singlemove1(t_stks *data)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int		ft_singlemove1(t_stacks *data)
 }
 
 // checks if its possible to sort data->la with a single move (rra)
-int		ft_singlemove2(t_stacks *data)
+int	ft_singlemove2(t_stks *data)
 {
 	int	i;
 

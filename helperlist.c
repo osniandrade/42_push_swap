@@ -6,17 +6,17 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 13:35:34 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 12:39:44 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 13:53:39 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 // normalizes the numbers in data->la to simpler positive numbers
-void	ft_normalize(t_stacks *data)
+void	ft_normalize(t_stks *data)
 {
-	t_lowest	p;
-	
+	t_var	p;
+
 	p.c = 0;
 	p.last = __INT_MAX__ * -1;
 	while (p.c < data->a_heigth)
@@ -40,7 +40,7 @@ void	ft_normalize(t_stacks *data)
 }
 
 // loads data->la in a secondary list and sorts it
-void	ft_helperlist(t_stacks *data)
+void	ft_helperlist(t_stks *data)
 {
 	ft_normalize(data);
 }

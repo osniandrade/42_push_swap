@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:02 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/29 13:44:56 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 14:25:00 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,16 @@ static void	ft_printargs(int moves)
 	ft_putchar_fd('\n', 1);
 }
 
+// exits the code and frees memory allocations
+void	ft_exit(t_stks *data)
+{
+	free (data->la);
+	free (data->lb);
+	exit(0);
+}
+
 // checks the stack size and which algorithm will be used to sort it
-void	ft_stacksize(t_stacks *data)
+void	ft_stacksize(t_stks *data)
 {
 	if (data->max_heigth == 0)
 		return ;
@@ -37,19 +45,22 @@ void	ft_stacksize(t_stacks *data)
 		ft_stack_huge(data);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stacks data;
-	t_list	a[argc];
-	t_list	b[argc];
+	t_stks	data;
+	t_list	*a;
+	t_list	*b;
 
-	data = (t_stacks) {0};
+	data = (t_stks){0};
 	ft_checkargs(argc, argv);
-	data.la = (t_list *)&a;
-	data.lb = (t_list *)&b;
+	a = malloc(sizeof(t_list) * argc);
+	b = malloc(sizeof(t_list) * argc);
+	data.la = (t_list *)a;
+	data.lb = (t_list *)b;
 	ft_initstacks(&data, argc);
 	ft_loadstack(&data, argv);
 	ft_stacksize(&data);
 	ft_printargs(data.moves);
+	ft_exit(&data);
 	return (0);
 }
