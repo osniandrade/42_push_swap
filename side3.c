@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/28 21:56:01 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	ft_pa(t_stacks *data, int print)
 {
 	if (data->b_heigth > 0)
 	{
-		ft_movealldown(data, &data->a_heigth, SA);
+		ft_movealldown(data, &data->a_heigth, data->la);
 		data->a_heigth += 1;
-		SA[0] = SB[0];
-		ft_moveallup(data, &data->b_heigth, SB);
+		data->la[0] = data->lb[0];
+		ft_moveallup(data, &data->b_heigth, data->lb);
 		data->b_heigth -= 1;
 		data->moves++;
 		if (print)
@@ -46,10 +46,10 @@ void	ft_pb(t_stacks *data, int print)
 {
 	if (data->a_heigth > 0)
 	{
-		ft_movealldown(data, &data->b_heigth, SB);
+		ft_movealldown(data, &data->b_heigth, data->lb);
 		data->b_heigth += 1;
-		SB[0] = SA[0];
-		ft_moveallup(data, &data->a_heigth, SA);
+		data->lb[0] = data->la[0];
+		ft_moveallup(data, &data->a_heigth, data->la);
 		data->a_heigth -= 1;
 		data->moves++;
 		if (print)
@@ -64,9 +64,9 @@ void	ft_ra(t_stacks *data, int print)
 
 	if (data->a_heigth > 1)
 	{
-		temp = SA[0];
-		ft_moveallup(data, &data->a_heigth, SA);
-		SA[data->a_heigth - 1] = temp;
+		temp = data->la[0];
+		ft_moveallup(data, &data->a_heigth, data->la);
+		data->la[data->a_heigth - 1] = temp;
 		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec ra:");
@@ -80,9 +80,9 @@ void	ft_rb(t_stacks *data, int print)
 
 	if (data->b_heigth > 1)
 	{
-		temp = SB[0];
-		ft_moveallup(data, &data->b_heigth, SB);
-		SB[data->b_heigth - 1] = temp;
+		temp = data->lb[0];
+		ft_moveallup(data, &data->b_heigth, data->lb);
+		data->lb[data->b_heigth - 1] = temp;
 		data->moves++;
 		if (print)
 			ft_printstack(data, "Exec rb:");

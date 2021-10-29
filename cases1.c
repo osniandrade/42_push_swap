@@ -6,13 +6,13 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:54:51 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/28 22:02:44 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-// sorts 4 to 5 numbers in SA
+// sorts 4 to 5 numbers in data->la
 int			ft_flowcase1(t_stacks *data)
 {
 	if (ft_singlemove1(data))
@@ -23,41 +23,41 @@ int			ft_flowcase1(t_stacks *data)
 		ft_pushlowest(data);
 	ft_pushlowest(data);
 	ft_stack_mid(data);
-	if (SB[0].o > SB[1].o && data->a_heigth == 5)
+	if (data->lb[0].o > data->lb[1].o && data->a_heigth == 5)
 		ft_sb(data, TRUE);
 	return (FALSE);
 }
 
-// finds the lowest number in SA
+// finds the lowest number in data->la
 t_lowest	ft_findlowest(t_stacks *data)
 {
 	int			i;
 	t_lowest	l;
 
 	i = 0;
-	l.lowest = SA[0].o;
+	l.lowest = data->la[0].o;
 	while (i < data->a_heigth)
 	{
-		if (SA[i].o < l.lowest)
+		if (data->la[i].o < l.lowest)
 		{
-			l.lowest = SA[i].o;
+			l.lowest = data->la[i].o;
 		}
 		i++;
 	}
 	return (l);
 }
 
-// rolls SA as little as possible and pushes its lowest value to SB
+// rolls data->la as little as possible and pushes its lowest value to data->lb
 void		ft_pushlowest(t_stacks *data)
 {
 	t_lowest	l;
 
 	l = ft_findlowest(data);
 	if (l.p < data->a_heigth / 2)
-		while (SA[0].o != l.lowest)
+		while (data->la[0].o != l.lowest)
 			ft_ra(data, TRUE);
 	else
-		while (SA[0].o != l.lowest)
+		while (data->la[0].o != l.lowest)
 			ft_rra(data, TRUE);
 	if (ft_ready(data))
 		ft_exit(data);
@@ -80,7 +80,7 @@ void		ft_sorthuge(t_stacks *data)
 	{
 		while (n.p < data->max_heigth)
 		{
-			if ((SA[0].n >> n.i)&1 == 1)
+			if ((data->la[0].n >> n.i)&1 == 1)
 				ft_ra(data, TRUE);
 			else
 				ft_pb(data, TRUE);

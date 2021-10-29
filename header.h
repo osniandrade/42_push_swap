@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:13:37 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/28 21:55:17 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:42:32 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,15 @@
 # define STACKNAME "a\tb\n"
 # define TRUE 1
 # define FALSE 0
-# define SA data->la
-# define SB data->lb
-# define LIST data->list
 # define CHUNKSIZE 20
 
-typedef	struct	s_list
+typedef struct s_list
 {
-	int			o; // original number
-	int			n; // normalized number
+	int			o;
+	int			n;
 }				t_list;
 
-typedef struct	s_stacks
+typedef struct s_stacks
 {
 	t_list		*la;
 	t_list		*lb;
@@ -44,7 +41,7 @@ typedef struct	s_stacks
 	int			moves;
 }				t_stacks;
 
-typedef	struct	s_lowest
+typedef struct s_lowest
 {
 	int			lowest;
 	int			last;
@@ -102,7 +99,7 @@ void		ft_pushlowest(t_stacks *data);
 void		ft_sorthuge(t_stacks *data);
 
 //validate1.c
-void		ft_error();
+void		ft_error(void);
 void		ft_checkargs(int argc, char **argv);
 void		ft_checknumbers(t_stacks *data);
 int			ft_ready(t_stacks *data);

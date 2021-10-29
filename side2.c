@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:20:50 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/28 21:55:02 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ void	ft_sa(t_stacks *data, int print)
 
 	if (data->a_heigth > 0)
 	{
-		i = SA[0];
-		SA[0] = SA[1];
-		SA[1] = i;
+		i = data->la[0];
+		data->la[0] = data->la[1];
+		data->la[1] = i;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec sa:");
+			ft_printstack(data, "Exec data->la:");
 	}
 }
 
@@ -69,12 +69,12 @@ void	ft_sb(t_stacks *data, int print)
 
 	if (data->b_heigth > 0)
 	{
-		i = SB[0];
-		SB[0] = SB[1];
-		SB[1] = i;
+		i = data->lb[0];
+		data->lb[0] = data->lb[1];
+		data->lb[1] = i;
 		data->moves++;
 		if (print)
-			ft_printstack(data, "Exec sb:");
+			ft_printstack(data, "Exec data->lb:");
 	}
 }
 

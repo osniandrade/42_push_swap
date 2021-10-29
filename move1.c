@@ -6,23 +6,23 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 12:32:32 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/28 21:50:40 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:39:44 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-// checks if its possible to sort SA with a single move (ra)
+// checks if its possible to sort data->la with a single move (ra)
 int		ft_singlemove1(t_stacks *data)
 {
 	int	i;
 
 	i = 1;
-	if (SA[0].o > SA[data->a_heigth - 1].o)
+	if (data->la[0].o > data->la[data->a_heigth - 1].o)
 	{
 		while (i < data->a_heigth - 1)
 		{
-			if (SA[i].o < SA[i + 1].o)
+			if (data->la[i].o < data->la[i + 1].o)
 				i++;
 			else
 				return (FALSE);
@@ -33,17 +33,17 @@ int		ft_singlemove1(t_stacks *data)
 	return (FALSE);
 }
 
-// checks if its possible to sort SA with a single move (rra)
+// checks if its possible to sort data->la with a single move (rra)
 int		ft_singlemove2(t_stacks *data)
 {
 	int	i;
 
 	i = 1;
-	if (SA[0].o > SA[data->a_heigth - 1].o)
+	if (data->la[0].o > data->la[data->a_heigth - 1].o)
 	{
 		while (i < data->a_heigth - 1)
 		{
-			if (SA[i].o < SA[i + 1].o)
+			if (data->la[i].o < data->la[i + 1].o)
 				i++;
 			else
 				return (FALSE);

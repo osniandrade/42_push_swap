@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:04:52 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/28 21:39:02 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_deflines(int k)
 	}
 }
 
-// loads input args into SA and into the secondary list
+// loads input args into data->la and into the secondary list
 void	ft_loadstack(t_stacks *data, char **argv)
 {
 	long int	number;
@@ -35,7 +35,7 @@ void	ft_loadstack(t_stacks *data, char **argv)
 	while (i <= data->a_heigth)
 	{
 		number = ft_atoi(argv[i]);
-		SA[i - 1].o = number;
+		data->la[i - 1].o = number;
 		i++;
 	}
 	ft_checknumbers(data);
@@ -44,7 +44,7 @@ void	ft_loadstack(t_stacks *data, char **argv)
 	ft_printstack(data, "Init a and b:");
 }
 
-// prints SA and SB on terminal
+// prints data->la and data->lb on terminal
 void	ft_printfullsack(t_stacks *data, char *msg)
 {
 	int		highest;
@@ -59,12 +59,12 @@ void	ft_printfullsack(t_stacks *data, char *msg)
 	while (i < highest)
 	{
 		if (i < data->a_heigth)
-			ft_putnbr_fd(SA[i].o, 1);
+			ft_putnbr_fd(data->la[i].o, 1);
 		else
 			ft_putchar_fd(' ', 1);
 		ft_putchar_fd('\t', 1);
 		if (i < data->b_heigth)
-			ft_putnbr_fd(SB[i].o, 1);
+			ft_putnbr_fd(data->lb[i].o, 1);
 		else
 			ft_putchar_fd(' ', 1);
 		ft_putchar_fd('\n', 1);
@@ -73,7 +73,7 @@ void	ft_printfullsack(t_stacks *data, char *msg)
 	ft_deflines(1);
 }
 
-// prints SA, SB, stack names and separation lines on terminal
+// prints data->la, data->lb, stack names and separation lines on terminal
 void	ft_printstack(t_stacks *data, char *msg)
 {
 	int	i;

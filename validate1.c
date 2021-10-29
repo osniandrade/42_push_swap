@@ -6,7 +6,7 @@
 /*   By: ocarlos- <ocarlos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 23:28:19 by ocarlos-          #+#    #+#             */
-/*   Updated: 2021/10/28 21:38:34 by ocarlos-         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:39:59 by ocarlos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ void	ft_checknumbers(t_stacks *data)
 		i = pivot + 1;
 		while (i < data->a_heigth)
 		{
-			if ((SA[pivot].o == SA[i].o) || 
-					(SA[pivot].o > __INT_MAX__) ||
-					(SA[i].o > __INT_MAX__))
+			if ((data->la[pivot].o == data->la[i].o) || 
+					(data->la[pivot].o > __INT_MAX__) ||
+					(data->la[i].o > __INT_MAX__))
 				ft_error();
 			i++;
 		}
@@ -59,17 +59,17 @@ void	ft_checknumbers(t_stacks *data)
 	}
 }
 
-// checks if SA is already sorted
+// checks if data->la is already sorted
 int		ft_ready(t_stacks *data)
 {
 	int	i;
 
-	if (!SB[0].o)
+	if (!data->lb[0].o)
 	{
 		i = 0;
 		while (i < data->a_heigth - 1)
 		{
-			if (SA[i].o < SA[i + 1].o)
+			if (data->la[i].o < data->la[i + 1].o)
 				i++;
 			else
 				return (FALSE);
